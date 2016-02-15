@@ -2,23 +2,25 @@ package com.study.mobile.activity;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-
 import com.study.mobile.R;
 import com.study.mobile.entity.ActionEntity;
 import com.zwy.widget.adapter.BaseAdapter;
 import com.zwy.widget.adapter.BaseAdapter.OnItemLoading;
 
-public class MainActivity extends BaseActivity implements OnItemClickListener, OnItemLoading<ActionEntity>{
+public class MainActivity extends BaseActivity implements OnItemClickListener{
 
 	private TextView desc;
 	private ListView list;
@@ -49,11 +51,12 @@ public class MainActivity extends BaseActivity implements OnItemClickListener, O
 	private void initView() {
 		desc = (TextView) findViewById(R.id.main_desc);
 		list = (ListView) findViewById(R.id.main_list);
+		list.setOnItemClickListener(this);
 	}
 
 	private void initData() {
 		desc.setText(R.string.desc_main);
-		mAdapter = new BaseAdapter<ActionEntity>(getItems(), this);
+		mAdapter = new BaseAdapter<ActionEntity>(getItems(), new ViewLoading(this));
 		list.setAdapter(mAdapter);
 	}
 
@@ -64,12 +67,45 @@ public class MainActivity extends BaseActivity implements OnItemClickListener, O
 	}
 
 	@Override
-	public View getView(View view, ActionEntity item) {
-		return null;
+	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+		startActivity(new Intent(this, mAdapter.getItem(position).getClazz()));
 	}
 
-	@Override
-	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-		startActivity(new Intent(this, mAdapter.getItem(position).getClass()));
+	private static class ViewLoading implements OnItemLoading<ActionEntity> {
+
+		private Context mContext;
+		public ViewLoading(Context ctx) {
+			this.mContext = ctx.getApplicationContext();
+		}
+
+		@SuppressLint("InflateParams") 
+		@Override
+		public View getView(View view, ActionEntity item) {
+			Holder holder = null;
+			if (view != null && view.getTag() != null && view.getTag() instanceof Holder) {
+				holder = (Holder) view.getTag();
+			} else {
+				view = LayoutInflater.from(mContext).inflate(R.layout.item_view_action, null, false);
+				holder = new Holder();
+				view.setTag(holder);
+			}
+			holder.id = (TextView) view.findViewById(R.id.action_id);
+			holder.title = (TextView) view.findViewById(R.id.action_title);
+			holder.desc = (TextView) view.findViewById(R.id.action_desc);
+			holder.next = (ImageView) view.findViewById(R.id.action_next);
+			holder.id.setText(item.getId());
+			holder.title.setText(item.getName());
+			holder.desc.setText(item.getDesc());
+			holder.next.setImageResource(R.drawable.icon_next);
+			return view;
+		}
+
+	}
+
+	private static class Holder {
+		public TextView id;
+		public TextView title;
+		public TextView desc;
+		public ImageView next;
 	}
 }

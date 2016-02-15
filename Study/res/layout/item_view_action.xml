@@ -1,28 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="horizontal" >
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingBottom="5dip"
+    android:paddingTop="5dip" >
 
     <TextView
         android:id="@+id/action_id"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:gravity="center" />
+        android:layout_width="32dip"
+        android:layout_height="32dip"
+        android:layout_gravity="center_vertical"
+        android:gravity="center_vertical"
+        android:padding="0dip"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
 
     <LinearLayout
         android:id="@+id/action_centre"
         android:layout_width="0dip"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
         android:layout_weight="1"
         android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/action_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/desc_cycle"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/action_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/desc_cycle"
+            android:textColor="@color/darker_gray"
+            android:textSize="14sp" />
     </LinearLayout>
 
     <ImageView
         android:id="@+id/action_next"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:contentDescription="@string/desc_main" />
+        android:layout_width="32dip"
+        android:layout_height="32dip"
+        android:layout_gravity="center_vertical"
+        android:contentDescription="@string/desc_main"
+        android:scaleType="fitXY"
+        android:src="@drawable/icon_next" />
 
 </LinearLayout>

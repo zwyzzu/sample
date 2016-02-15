@@ -23,23 +23,23 @@ package com.study.mobile.entity;
  **/
 public class ActionEntity extends BaseEntity {
 	private static final long serialVersionUID = -5097722677183788417L;
-	private int id;
+	private String id;
 	private String name;
 	private String desc;
 	private Class<?> clazz;
 
 	public ActionEntity(int id, String name, String desc, Class<?> clazz) {
-		this.setId(id);
+		this.setId(String.valueOf(id));
 		this.setName(name);
 		this.setDesc(desc);
 		this.setClazz(clazz);
 	}
 
-	public int getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
