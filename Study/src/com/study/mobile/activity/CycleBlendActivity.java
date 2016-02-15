@@ -1,6 +1,6 @@
 /*************************************************************************************
  * Module Name: 具体模块见相应注释
- * File Name: CycleActivity.java
+ * File Name: CycleBlendActivity.java
  * Author: 张维亚
  * All Rights Reserved
  * 所有版权保护
@@ -15,48 +15,38 @@
  ***************************************************************************************/
 package com.study.mobile.activity;
 
-import android.content.Intent;
+import com.study.mobile.R;
+import com.study.mobile.common.CycleData;
+
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.TextView;
-
-import com.study.mobile.R;
-import com.study.mobile.common.CycleData;
-import com.study.mobile.common.CycleData.Cycle;
 
 /**
  * Author: 张维亚
- * 创建时间：2016年2月14日 下午4:07:48
- * 修改时间：2016年2月14日 下午4:07:48
- * Description: 生命周期
+ * 创建时间：2016年2月15日 上午11:07:43
+ * 修改时间：2016年2月15日 上午11:07:43
+ * Description: 生命周期交替
  **/
-public class CycleActivity extends BaseActivity implements OnClickListener, Cycle{
+public class CycleBlendActivity extends BaseActivity implements OnClickListener{
 
 	@Override
 	protected void onCreate(Bundle bundle) {
-		CycleData.getInstance().register(this);
 		super.onCreate(bundle);
-		setContentView(R.layout.activity_cycle);
-		findViewById(R.id.cycle_blend).setOnClickListener(this);
+		setContentView(R.layout.activity_cycle_blend);
+		findViewById(R.id.blend_button).setOnClickListener(this);;
 	}
 
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
-		case R.id.cycle_blend:
-			startActivity(new Intent(this, CycleBlendActivity.class));
+		case R.id.blend_button:
+			finish();
 			break;
 
 		default:
 			break;
 		}
-	}
-
-	@Override
-	public void cycle(String data) {
-		TextView view = (TextView) findViewById(R.id.cycle_data);
-		view.setText(data);
 	}
 
 	@Override

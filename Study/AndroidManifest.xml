@@ -26,6 +26,10 @@
             android:name=".activity.CycleActivity"
             android:label="@string/name_cycle"
             android:theme="@style/AppTheme" />
+        <activity
+            android:name=".activity.CycleBlendActivity"
+            android:label="@string/name_cycle"
+            android:theme="@style/AppTheme" />
     </application>
 
 </manifest>
