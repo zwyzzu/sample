@@ -8,6 +8,11 @@
         android:minSdkVersion="8"
         android:targetSdkVersion="21" />
 
+    <permission android:name="com.android.permission.STUDY_RECEIVER" />
+    <permission android:name="com.android.permission.SEND_STUDY" />
+
+    <uses-permission android:name="com.android.permission.STUDY_RECEIVER" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/icon_launcher"
@@ -30,6 +35,25 @@
             android:name=".activity.CycleBlendActivity"
             android:label="@string/name_cycle"
             android:theme="@style/AppTheme" />
+        <activity
+            android:name=".activity.ServiceActivity"
+            android:label="@string/name_service"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".activity.BroadcastActivity"
+            android:label="@string/name_broadcast"
+            android:launchMode="singleTask"
+            android:theme="@style/AppTheme" />
+        <!-- receiver -->
+        <receiver
+            android:name=".broadcast.StaticBroadcastReceiver"
+            android:label="@string/name_static_broadcast"
+            android:permission="com.android.permission.SEND_STUDY" >
+            <!-- 当前app不得申请com.android.permission.SEND_STUDY权限 -->
+            <intent-filter>
+                <action android:name="com.study.mobile.staticbroadcast" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

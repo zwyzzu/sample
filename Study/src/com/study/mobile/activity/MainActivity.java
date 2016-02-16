@@ -63,6 +63,8 @@ public class MainActivity extends BaseActivity implements OnItemClickListener{
 	private List<ActionEntity> getItems(){
 		List<ActionEntity> list = new ArrayList<ActionEntity>();
 		list.add(new ActionEntity(list.size(), getString(R.string.name_cycle), getString(R.string.desc_cycle), CycleActivity.class));
+		list.add(new ActionEntity(list.size(), getString(R.string.name_service), getString(R.string.desc_service), ServiceActivity.class));
+		list.add(new ActionEntity(list.size(), getString(R.string.name_broadcast), getString(R.string.desc_broadcast), BroadcastActivity.class));
 		return list;
 	}
 
