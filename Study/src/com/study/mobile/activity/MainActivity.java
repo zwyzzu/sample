@@ -2,6 +2,7 @@ package com.study.mobile.activity;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
@@ -15,8 +16,11 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+
 import com.study.mobile.R;
+import com.study.mobile.common.Common;
 import com.study.mobile.entity.ActionEntity;
+import com.zwy.utils.Utils;
 import com.zwy.widget.adapter.BaseAdapter;
 import com.zwy.widget.adapter.BaseAdapter.OnItemLoading;
 
@@ -65,12 +69,18 @@ public class MainActivity extends BaseActivity implements OnItemClickListener{
 		list.add(new ActionEntity(list.size(), getString(R.string.name_cycle), getString(R.string.desc_cycle), CycleActivity.class));
 		list.add(new ActionEntity(list.size(), getString(R.string.name_service), getString(R.string.desc_service), ServiceActivity.class));
 		list.add(new ActionEntity(list.size(), getString(R.string.name_broadcast), getString(R.string.desc_broadcast), BroadcastActivity.class));
+		list.add(new ActionEntity(list.size(), getString(R.string.name_process), getString(R.string.desc_process), ProcessActivity.class).putString(Common.BUNDLE_PROCESS, Utils.getProcessName(getApplicationContext())));
 		return list;
 	}
 
 	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-		startActivity(new Intent(this, mAdapter.getItem(position).getClazz()));
+		ActionEntity entity = mAdapter.getItem(position);
+		Intent intent = new Intent(this, entity.getClazz());
+		if (entity.getBundle() != null)
+			intent.putExtras(entity.getBundle());
+
+		startActivity(intent);
 	}
 
 	private static class ViewLoading implements OnItemLoading<ActionEntity> {

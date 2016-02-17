@@ -15,6 +15,8 @@
 ***************************************************************************************/
 package com.study.mobile.entity;
 
+import android.os.Bundle;
+
 /**
  * Author: zhangwy
  * 创建时间：2015年9月18日 下午1:40:02
@@ -27,6 +29,7 @@ public class ActionEntity extends BaseEntity {
 	private String name;
 	private String desc;
 	private Class<?> clazz;
+	private Bundle mBundle;
 
 	public ActionEntity(int id, String name, String desc, Class<?> clazz) {
 		this.setId(String.valueOf(id));
@@ -67,4 +70,14 @@ public class ActionEntity extends BaseEntity {
 		this.clazz = clazz;
 	}
 
+	public ActionEntity putString(String key, String value){
+		if (mBundle == null)
+			mBundle = new Bundle();
+		mBundle.putString(key, value);
+		return this;
+	}
+
+	public Bundle getBundle(){
+		return this.mBundle;
+	}
 }

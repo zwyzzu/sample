@@ -15,6 +15,7 @@
 
     <application
         android:allowBackup="true"
+        android:name="com.study.mobile.StudyApplication"
         android:icon="@drawable/icon_launcher"
         android:label="@string/name_main"
         android:theme="@style/AppTheme" >
@@ -43,6 +44,12 @@
             android:name=".activity.BroadcastActivity"
             android:label="@string/name_broadcast"
             android:launchMode="singleTask"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".activity.ProcessActivity"
+            android:label="@string/name_broadcast"
+            android:launchMode="singleTask"
+            android:process="com.study.process"
             android:theme="@style/AppTheme" />
         <!-- receiver -->
         <receiver
