@@ -16,6 +16,7 @@
 package com.study.mobile.service;
 
 import com.zwy.utils.Logger;
+import com.zwy.utils.Utils;
 
 import android.app.Service;
 import android.content.Intent;
@@ -33,18 +34,18 @@ public class BaseService extends Service {
 	@Override
 	public void onCreate() {
 		super.onCreate();
-		Logger.d(CYCLE_TAG, makeCycleMsg("onCreate"));
+		Logger.d(CYCLE_TAG, Utils.makeCycleMsg(this, "onCreate"));
 	}
 
 	@Override
 	public void onRebind(Intent intent) {
 		super.onRebind(intent);
-		Logger.d(CYCLE_TAG, makeCycleMsg("onRebind"));
+		Logger.d(CYCLE_TAG, Utils.makeCycleMsg(this, "onRebind"));
 	}
 
 	@Override
 	public IBinder onBind(Intent intent) {
-		Logger.d(CYCLE_TAG, makeCycleMsg("onBind"));
+		Logger.d(CYCLE_TAG, Utils.makeCycleMsg(this, "onBind"));
 		return null;
 	}
 
@@ -52,34 +53,31 @@ public class BaseService extends Service {
 	@Override
 	public void onStart(Intent intent, int startId) {
 		super.onStart(intent, startId);
-		Logger.d(CYCLE_TAG, makeCycleMsg("onStart"));
+		Logger.d(CYCLE_TAG, Utils.makeCycleMsg(this, "onStart"));
 	}
 
 	@Override
 	public int onStartCommand(Intent intent, int flags, int startId) {
-		Logger.d(CYCLE_TAG, makeCycleMsg("onStartCommand"));
+		Logger.d(CYCLE_TAG, Utils.makeCycleMsg(this, "onStartCommand"));
 		return super.onStartCommand(intent, flags, startId);
 	}
 
 	@Override
 	public void onDestroy() {
 		super.onDestroy();
-		Logger.d(CYCLE_TAG, makeCycleMsg("onDestroy"));
+		Logger.d(CYCLE_TAG, Utils.makeCycleMsg(this, "onDestroy"));
 	}
 
 	@Override
 	public boolean onUnbind(Intent intent) {
-		Logger.d(CYCLE_TAG, makeCycleMsg("onUnbind"));
+		Logger.d(CYCLE_TAG, Utils.makeCycleMsg(this, "onUnbind"));
 		return super.onUnbind(intent);
 	}
 
 	@Override
 	protected void finalize() throws Throwable {
 		super.finalize();
-		Logger.d(CYCLE_TAG, makeCycleMsg("finalize"));
+		Logger.d(CYCLE_TAG, Utils.makeCycleMsg(this, "finalize"));
 	}
 
-	protected String makeCycleMsg(String cycle) {
-		return TAG + "," + cycle + "," + this.hashCode();
-	}
 }
