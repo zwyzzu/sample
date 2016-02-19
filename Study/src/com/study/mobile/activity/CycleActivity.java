@@ -24,6 +24,7 @@ import android.widget.TextView;
 import com.study.mobile.R;
 import com.study.mobile.common.CycleData;
 import com.study.mobile.common.CycleData.Cycle;
+import com.study.mobile.common.CycleData.Model;
 
 /**
  * Author: 张维亚
@@ -35,7 +36,7 @@ public class CycleActivity extends BaseActivity implements OnClickListener, Cycl
 
 	@Override
 	protected void onCreate(Bundle bundle) {
-		CycleData.getInstance().register(this);
+		CycleData.getInstance(Model.ACTIVITY).register(this);
 		super.onCreate(bundle);
 		setContentView(R.layout.activity_cycle);
 		findViewById(R.id.cycle_blend).setOnClickListener(this);
@@ -62,7 +63,7 @@ public class CycleActivity extends BaseActivity implements OnClickListener, Cycl
 	@Override
 	protected String makeCycleMsg(String cycle) {
 		String msg = super.makeCycleMsg(cycle);
-		CycleData.getInstance().collection(msg);
+		CycleData.getInstance(Model.ACTIVITY).collection(msg);
 		return msg;
 	}
 }

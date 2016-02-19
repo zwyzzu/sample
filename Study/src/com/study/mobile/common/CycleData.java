@@ -16,6 +16,7 @@
 package com.study.mobile.common;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import com.zwy.utils.Logger;
@@ -27,10 +28,14 @@ import com.zwy.utils.Logger;
  * Description: 生命周期数据
  **/
 public class CycleData {
-	private static CycleData instance = new CycleData();
 	private List<String> mCycleData = new ArrayList<String>();
 	private Cycle mCycle = null;
-	public static CycleData getInstance() {
+	private static HashMap<Model, CycleData> mInstances = new HashMap<Model, CycleData>();
+	public static CycleData getInstance(Model key) {
+		if (mInstances.containsKey(key))
+			return mInstances.get(key);
+		CycleData instance = new CycleData();
+		mInstances.put(key, instance);
 		return instance;
 	}
 
@@ -44,7 +49,7 @@ public class CycleData {
 		try {
 			mCycle.cycle(cycle.toString());
 		} catch (Exception e) {
-			Logger.d(instance.getClass().getSimpleName(), e.getMessage());
+			Logger.d(this.getClass().getSimpleName(), e.getMessage());
 		}
 	}
 
@@ -59,5 +64,9 @@ public class CycleData {
 
 	public static interface Cycle {
 		public void cycle(String data);
+	}
+
+	public static enum Model {
+		ACTIVITY, FRAGMENT;
 	}
 }

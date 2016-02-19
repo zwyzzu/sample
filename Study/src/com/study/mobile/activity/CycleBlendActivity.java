@@ -17,6 +17,7 @@ package com.study.mobile.activity;
 
 import com.study.mobile.R;
 import com.study.mobile.common.CycleData;
+import com.study.mobile.common.CycleData.Model;
 
 import android.os.Bundle;
 import android.view.View;
@@ -52,7 +53,7 @@ public class CycleBlendActivity extends BaseActivity implements OnClickListener{
 	@Override
 	protected String makeCycleMsg(String cycle) {
 		String msg = super.makeCycleMsg(cycle);
-		CycleData.getInstance().collection(msg);
+		CycleData.getInstance(Model.ACTIVITY).collection(msg);
 		return msg;
 	}
 }
