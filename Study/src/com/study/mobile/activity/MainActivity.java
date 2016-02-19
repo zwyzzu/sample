@@ -70,6 +70,7 @@ public class MainActivity extends BaseActivity implements OnItemClickListener{
 		list.add(new ActionEntity(list.size(), getString(R.string.name_service), getString(R.string.desc_service), ServiceActivity.class));
 		list.add(new ActionEntity(list.size(), getString(R.string.name_broadcast), getString(R.string.desc_broadcast), BroadcastActivity.class));
 		list.add(new ActionEntity(list.size(), getString(R.string.name_process), getString(R.string.desc_process), ProcessActivity.class).putString(Common.BUNDLE_PROCESS, Utils.getProcessName(getApplicationContext())));
+		list.add(new ActionEntity(list.size(), getString(R.string.name_fragment), getString(R.string.desc_fragment), FragmentActivity.class));
 		return list;
 	}
 

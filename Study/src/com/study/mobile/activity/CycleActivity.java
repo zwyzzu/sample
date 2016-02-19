@@ -36,7 +36,7 @@ public class CycleActivity extends BaseActivity implements OnClickListener, Cycl
 
 	@Override
 	protected void onCreate(Bundle bundle) {
-		CycleData.getInstance(Model.ACTIVITY).register(this);
+		CycleData.getInstance(Model.activity).register(this);
 		super.onCreate(bundle);
 		setContentView(R.layout.activity_cycle);
 		findViewById(R.id.cycle_blend).setOnClickListener(this);
@@ -63,7 +63,7 @@ public class CycleActivity extends BaseActivity implements OnClickListener, Cycl
 	@Override
 	protected String makeCycleMsg(String cycle) {
 		String msg = super.makeCycleMsg(cycle);
-		CycleData.getInstance(Model.ACTIVITY).collection(msg);
+		CycleData.getInstance(Model.activity).collection(msg);
 		return msg;
 	}
 }

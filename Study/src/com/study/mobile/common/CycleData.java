@@ -67,6 +67,6 @@ public class CycleData {
 	}
 
 	public static enum Model {
-		ACTIVITY, FRAGMENT;
+		activity, fragment;
 	}
 }

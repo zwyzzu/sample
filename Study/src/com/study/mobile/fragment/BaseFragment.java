@@ -17,8 +17,8 @@ package com.study.mobile.fragment;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -108,6 +108,12 @@ public class BaseFragment extends Fragment {
 	public void onDetach() {
 		super.onDetach();
 		Logger.d(CYCLE_TAG, makeCycleMsg("onDetach"));
+	}
+
+	public final View findViewById(int id) {
+		if (getView() == null)
+			return null;
+		return getView().findViewById(id);
 	}
 
 	protected String makeCycleMsg(String cycle) {

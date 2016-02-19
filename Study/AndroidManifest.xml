@@ -51,6 +51,10 @@
             android:launchMode="singleTask"
             android:process="com.study.process"
             android:theme="@style/AppTheme" />
+        <activity
+            android:name=".activity.FragmentActivity"
+            android:label="@string/name_fragment"
+            android:theme="@style/AppTheme" />
         <!-- receiver -->
         <receiver
             android:name=".broadcast.StaticBroadcastReceiver"
@@ -61,6 +65,7 @@
                 <action android:name="com.study.mobile.staticbroadcast" />
             </intent-filter>
         </receiver>
+        <!-- service -->
     </application>
 
 </manifest>

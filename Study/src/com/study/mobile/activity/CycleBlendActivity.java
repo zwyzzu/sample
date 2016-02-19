@@ -53,7 +53,7 @@ public class CycleBlendActivity extends BaseActivity implements OnClickListener{
 	@Override
 	protected String makeCycleMsg(String cycle) {
 		String msg = super.makeCycleMsg(cycle);
-		CycleData.getInstance(Model.ACTIVITY).collection(msg);
+		CycleData.getInstance(Model.activity).collection(msg);
 		return msg;
 	}
 }

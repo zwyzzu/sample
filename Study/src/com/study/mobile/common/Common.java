@@ -32,4 +32,6 @@ public class Common {
 	public final static String BUNDLE_REGISTER = "com.study.mobile.register";
 	public final static String BUNDLE_MSG = "com.study.mobile.msg";
 	public final static String BUNDLE_PROCESS = "com.study.mobile.processname";
+	public final static String BUNDLE_TITLE = "com.study.mobile.title";
+	public final static String BUNDLE_DESC = "com.study.mobile.desc";
 }
