@@ -1,0 +1,4 @@
+include ':widget'
+project(':widget').projectDir = new File(settingsDir, '../../library/widget')
+include ':utils'
+project(':utils').projectDir = new File(settingsDir, '../../library/utils')
