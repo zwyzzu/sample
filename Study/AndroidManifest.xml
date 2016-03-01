@@ -55,6 +55,10 @@
             android:name=".activity.FragmentActivity"
             android:label="@string/name_fragment"
             android:theme="@style/AppTheme" />
+        <activity
+            android:name=".activity.ViewActivity"
+            android:label="@string/name_view"
+            android:theme="@style/AppTheme" />
         <!-- receiver -->
         <receiver
             android:name=".broadcast.StaticBroadcastReceiver"

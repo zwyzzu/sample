@@ -12,6 +12,7 @@
 	<string name="name_process">Activity Process</string>
 	<string name="name_fragment">Activity Fragment</string>
 	<string name="name_testfragment">第%1$s个fragment</string>
+	<string name="name_view">Activity View</string>
 	<string name="desc_main">主功能列表</string>
 	<string name="desc_cycle">调研Activity生命周期</string>
 	<string name="desc_cycle_blend">生命周期调研\n混合两个Activity的生命周期\n点击关闭按钮即可看到两个Activity混合周期函数结果</string>
@@ -22,6 +23,7 @@
 	<string name="desc_process">多进程调研</string>
 	<string name="desc_fragment">fragment调研</string>
 	<string name="desc_testfragment">第%1$s个fragment\n用于测试</string>
+	<string name="desc_view">View的调研</string>
 	<string name="button_cycle_blend">点击关闭</string>
 	<string name="button_cycle">点击查看交互生命周期</string>
 	<string name="button_service_start">start service</string>
@@ -31,6 +33,8 @@
 	<string name="button_broadcast_register">动态注册Broadcast</string>
 	<string name="button_broadcast_senddynamic">发送Dynamic Broadcast</string>
 	<string name="button_broadcast_sendstatic">发送Static Broadcast</string>
+	<string name="button_view_post">发送事件</string>
+	<string name="button_view_end">事件结束</string>
 	<string name="text_process_base">基础进程ID：%1$s</string>
 	<string name="text_process_current">现在进程ID：%1$s</string>
 </resources>
