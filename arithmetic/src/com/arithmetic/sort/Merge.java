@@ -27,7 +27,7 @@ public class Merge{
 
 	public static void main(String[] args) {
 
-		int[] array = Common.random(7);
+		int[] array = Common.random(80);
 		Common.log(array);
 		mergeSort(array, 0, array.length - 1);
 		Common.log(array);
@@ -39,7 +39,7 @@ public class Merge{
 		int middle = (start + end) / 2;
 		mergeSort(array, start, middle);
 		mergeSort(array, middle + 1, end);
-		merge(array, start, middle, end);
+		merge2(array, start, middle, end);
 	}
 
 	public static int[] left = null;
@@ -72,6 +72,44 @@ public class Merge{
 			} else {
 				array[i] = right[rp];
 				rp++;
+			}
+		}
+		Common.log(array);
+	}
+
+	public static void merge2(int[] array, int start, int middle, int end) {
+		int ll = middle - start + 1;
+		int rl = end - middle;
+
+		System.out.println("start:" + start + ",middle:" + middle + ",end:" + end + ",ll:" + ll + ",rl:" + rl);
+		int[] left = new int[ll];
+		int[] right = new int[rl];
+
+		System.arraycopy(array, start, left, 0, ll);
+		System.arraycopy(array, middle + 1, right, 0, rl);
+//
+//		Common.log(left);
+//		Common.log(right);
+
+		int lp = 0;
+		int rp = 0;
+		for (int i = start; i <= end; i++) {
+			if (left[lp] <= right[rp]) {
+				array[i] = left[lp++];
+				if (lp >= ll) {
+//					System.out.print("lp:");
+//					Common.log(array);
+					System.arraycopy(right, rp, array, i+1, rl - rp);
+					break;
+				}
+			} else {
+				array[i] = right[rp++];
+				if (rp >= rl) {
+//					System.out.print("rp:");
+//					Common.log(array);
+					System.arraycopy(left, lp, array, i+1, ll - lp);
+					break;
+				}
 			}
 		}
 		Common.log(array);
