@@ -15,21 +15,22 @@
  ***************************************************************************************/
 package com.arithmetic.sort;
 
+import com.arithmetic.common.Common;
+
 /**
  * Author: 张维亚
  * 创建时间：2016年3月25日 下午6:38:17
  * 修改时间：2016年3月25日 下午6:38:17
- * Description: TODO
+ * Description: 
  **/
-public class Merge extends Base{
+public class Merge{
 
-	
 	public static void main(String[] args) {
 
-		int[] array = random(8);
-		log(array);
+		int[] array = Common.random(7);
+		Common.log(array);
 		mergeSort(array, 0, array.length - 1);
-		log(array);
+		Common.log(array);
 	}
 
 	public static void mergeSort(int[] array, int start, int end) {
@@ -47,24 +48,24 @@ public class Merge extends Base{
 		int ll = middle - start + 1;
 		int rl = end - middle;
 
+		System.out.println("start:" + start + ",middle:" + middle + ",end:" + end + ",ll:" + ll + ",rl:" + rl);
 		if (left == null)
 			left = new int[array.length];
 		if (right == null)
 			right = new int[array.length];
 
 		System.arraycopy(array, start, left, 0, ll);
-		System.arraycopy(array, middle, right, 0, rl);
+		System.arraycopy(array, middle + 1, right, 0, rl);
 
-		left[ll] = MAX;
-		right[rl] = MAX;
+		left[ll] = Common.MAX_ELEMENT;
+		right[rl] = Common.MAX_ELEMENT;
 
-//		System.out.println("start:" + start + ",middle:" + middle + ",end:" + end + ",ll:" + ll + ",rl:" + rl);
-//		log(left);
-//		log(right);
+		Common.log(left);
+		Common.log(right);
 
 		int lp = 0;
 		int rp = 0;
-		for (int i = start; i < end; i++) {
+		for (int i = start; i <= end; i++) {
 			if (left[lp] <= right[rp]) {
 				array[i] = left[lp];
 				lp++;
@@ -73,7 +74,7 @@ public class Merge extends Base{
 				rp++;
 			}
 		}
-//		log(array);
+		Common.log(array);
 	}
 	
 }

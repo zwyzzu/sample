@@ -15,7 +15,7 @@
  ***************************************************************************************/
 package com.arithmetic.sort;
 
-import java.util.Random;
+import com.arithmetic.common.Common;
 
 /**
  * Author: 张维亚
@@ -23,23 +23,22 @@ import java.util.Random;
  * 修改时间：2016年3月17日 上午11:29:46
  * Description: 
  **/
-public class Insertion extends Base{
+public class Insertion{
 
 	public static void main(String[] args) {
 
-		int[] array = random(400);
-		log(array);
+		int[] array = Common.random(400);
+		Common.log(array);
 		int[] ascending = ascending(array);
-		log(ascending);
+		Common.log(ascending);
 		int[] descending = descending(array);
-		log(descending);
+		Common.log(descending);
 		insertion(8);
 	}
 
 	public static void insertion(int count){
 		for (int i = 0; i < count; i++) {
-			int[] array = random((int)Math.pow(10, i));
-//			log(array);
+			int[] array = Common.random((int)Math.pow(10, i));
 			long time1 = System.currentTimeMillis();
 			ascending(array);
 			long time2 = System.currentTimeMillis();
@@ -92,16 +91,6 @@ public class Insertion extends Base{
 			desc[j + 1] = current;
 		}
 		return desc;
-	}
-
-	public static int[] random(int count) {
-		int max = count * 100;
-		int[] array = new int[count];
-		Random random = new Random();
-		for (int i = 0; i < count; i++) {
-			array[i] = random.nextInt(max);
-		}
-		return array;
 	}
 
 }
