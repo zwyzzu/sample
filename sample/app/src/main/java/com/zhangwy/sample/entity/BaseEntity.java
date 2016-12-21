@@ -7,9 +7,18 @@ import java.io.Serializable;
  * Updated by zhangwy on 2016/12/20 下午4:46.
  * Description base entity
  */
-public class BaseEntity implements Serializable{
+public class BaseEntity implements Serializable {
     private int code;
     private String msg;
+
+    public BaseEntity() {
+        super();
+    }
+
+    public BaseEntity(int code, String msg) {
+        this.setCode(code);
+        this.setMsg(msg);
+    }
 
     public int getCode() {
         return code;

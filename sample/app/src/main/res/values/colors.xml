@@ -4,7 +4,7 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <!-- drawable -->
-    <drawable name="background">#464646</drawable>
+    <color name="background">#464646</color>
     <!-- color -->
     <color name="transparent">#00000000</color>
     <color name="translucence">#50000000</color>

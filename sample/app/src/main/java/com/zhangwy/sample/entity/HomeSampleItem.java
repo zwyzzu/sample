@@ -8,7 +8,17 @@ package com.zhangwy.sample.entity;
 public class HomeSampleItem extends BaseEntity{
     private String name;
     private String desc;
+    private Class<?> clazz;
 
+    public HomeSampleItem(){
+        super();
+    }
+    public HomeSampleItem(int code, String msg, String name, String desc, Class<?> clazz) {
+        super(code, msg);
+        this.setName(name);
+        this.setDesc(desc);
+        this.setClazz(clazz);
+    }
     public String getName() {
         return name;
     }
@@ -23,5 +33,13 @@ public class HomeSampleItem extends BaseEntity{
 
     public void setDesc(String desc) {
         this.desc = desc;
+    }
+
+    public Class<?> getClazz() {
+        return clazz;
+    }
+
+    public void setClazz(Class<?> clazz) {
+        this.clazz = clazz;
     }
 }
