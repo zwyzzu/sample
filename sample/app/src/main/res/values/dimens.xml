@@ -4,6 +4,7 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="divider_list">1dp</dimen>
     <dimen name="home_sample_item_height">66dip</dimen>
+    <dimen name="background_radius_home_sample_item">6dip</dimen>
 
     <dimen name="font_size_1">28sp</dimen>
     <dimen name="font_size_2">22sp</dimen>

@@ -1,5 +1,7 @@
 package com.zhangwy.sample.ui;
 
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,7 +26,6 @@ public class MainActivity extends BaseActivity implements RecyclerAdapter.OnItem
 
     private void initSampleItems() {
         WRecyclerView<HomeSampleItem> view = (WRecyclerView<HomeSampleItem>) findViewById(R.id.main_recycler);
-        view.addItemDecoration(RecyclerDivider.create(this, WRecyclerView.VERTICAL, getResources().getColor(R.color.background)));
         view.setLinearLayoutManager(WRecyclerView.VERTICAL, false);
         view.setOnItemClickListener(this);
         view.loadData(getSampleItems(), new HomeAdapter());
@@ -32,6 +33,7 @@ public class MainActivity extends BaseActivity implements RecyclerAdapter.OnItem
 
     @Override
     public void onItemClick(View view, int viewType, HomeSampleItem entity, int position) {
+        startActivity(new Intent(this, entity.getClazz()));
     }
 
     private static class HomeAdapter extends RecyclerAdapter.OnItemLoading<HomeSampleItem> {
@@ -48,7 +50,7 @@ public class MainActivity extends BaseActivity implements RecyclerAdapter.OnItem
 
         @Override
         public void onLoadView(View root, int viewType, HomeSampleItem entity, int position) {
-            ((TextView) root.findViewById(R.id.home_sample_id)).setText(entity.getCode());
+            ((TextView) root.findViewById(R.id.home_sample_id)).setText(String.valueOf(entity.getCode()));
             ((TextView) root.findViewById(R.id.home_sample_title)).setText(entity.getName());
             ((TextView) root.findViewById(R.id.home_sample_desc)).setText(entity.getDesc());
         }
@@ -56,7 +58,8 @@ public class MainActivity extends BaseActivity implements RecyclerAdapter.OnItem
 
     private ArrayList<HomeSampleItem> getSampleItems(){
         ArrayList<HomeSampleItem> samples = new ArrayList<>();
-        samples.add(new HomeSampleItem(1, "sample Items", "Cycle Activity", "生命周期调研", CycleAActivity.class));
+        samples.add(new HomeSampleItem(1, "Sample Item1", "Cycle Activity", getString(R.string.desc_cycle), CycleAActivity.class));
+        samples.add(new HomeSampleItem(2, "Sample Item2", "Scroll Nested Activity", getString(R.string.desc_scroll_nested),ScrollNestedActivity.class));
         return samples;
     }
 }

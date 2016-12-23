@@ -1,7 +1,11 @@
 <resources>
     <string name="app_name">Sample</string>
-    <string name="desc_main">样例列表</string>
     <string name="colon_connect">%1$s : %2$s</string>
     <string name="name_main">主页</string>
     <string name="action_settings">Settings</string>
+    <string name="desc_main">样例列表</string>
+    <string name="desc_cycle">生命周期调研</string>
+    <string name="desc_scroll_nested">ScrollView嵌套\nTouch事件调试</string>
+    <string name="desc_scroll_nested_horizontalScrollView">嵌套HorizontalScrollView</string>
+    <string name="desc_scroll_nested_recyclerView">嵌套RecyclerView</string>
 </resources>
