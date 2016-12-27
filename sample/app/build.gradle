@@ -1,9 +1,16 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        config {
+            keyAlias 'zhangwy'
+            keyPassword 'zwy19870214'
+            storeFile file('/Users/zhangwy/workspace/sample/sample/signature.jks')
+            storePassword 'zwy19870214'
+        }
+    }
     compileSdkVersion 25
     buildToolsVersion '25.0.2'
-
     defaultConfig {
         applicationId "com.zhangwy.sample"
         minSdkVersion 16
@@ -16,17 +23,27 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_7
         targetCompatibility JavaVersion.VERSION_1_7
     }
-
     buildTypes {
         release {
+            debuggable true
+            jniDebuggable false
+            signingConfig signingConfigs.config
+            renderscriptDebuggable false
             minifyEnabled false
+            pseudoLocalesEnabled false
+            zipAlignEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         debug {
+            debuggable true
+            jniDebuggable false
+            signingConfig signingConfigs.config
+            renderscriptDebuggable false
             minifyEnabled false
+            pseudoLocalesEnabled false
+            zipAlignEnabled true
         }
     }
-
     lintOptions {
         abortOnError false
     }
