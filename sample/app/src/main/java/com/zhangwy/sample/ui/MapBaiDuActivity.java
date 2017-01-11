@@ -21,7 +21,7 @@ import com.zwy.utils.Logger;
 /**
  * Created by 张维亚(zhangwy) on 2016/12/27 下午3:47.
  * Updated by zhangwy on 2016/12/27 下午3:47.
- * Description 百度地图
+ * Description 百度地图界面
  */
 public class MapBaiDuActivity extends BaseActivity implements BaiduMap.OnMarkerDragListener, BaiduMap.OnMapClickListener {
     private MapView mapView;
