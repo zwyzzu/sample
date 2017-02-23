@@ -9,4 +9,5 @@
     <string name="desc_scroll_nested_horizontalScrollView">嵌套HorizontalScrollView</string>
     <string name="desc_scroll_nested_recyclerView">嵌套RecyclerView</string>
     <string name="desc_map_baidu">百度地图</string>
+    <string name="desc_event">事件传递机制调研</string>
 </resources>

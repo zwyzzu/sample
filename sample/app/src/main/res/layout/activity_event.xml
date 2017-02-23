@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhangwy.sample.widght.EventLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/event_level0"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="12dp">
+
+    <com.zhangwy.sample.widght.EventLinearLayout
+        android:id="@+id/event_level1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="12dp">
+
+        <com.zhangwy.sample.widght.EventLinearLayout
+            android:id="@+id/event_level2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="12dp">
+
+            <com.zhangwy.sample.widght.EventLinearLayout
+                android:id="@+id/event_level3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="12dp">
+
+                <com.zhangwy.sample.widght.EventLinearLayout
+                    android:id="@+id/event_level4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="12dp">
+
+                    <com.zhangwy.sample.widght.EventLinearLayout
+                        android:id="@+id/event_level5"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="12dp">
+
+                        <com.zhangwy.sample.widght.EventLinearLayout
+                            android:id="@+id/event_level6"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="12dp">
+
+                            <com.zhangwy.sample.widght.EventLinearLayout
+                                android:id="@+id/event_level7"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:padding="12dp">
+
+                                <com.zhangwy.sample.widght.EventLinearLayout
+                                    android:id="@+id/event_level8"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:padding="12dp">
+
+                                    <com.zhangwy.sample.widght.EventLinearLayout
+                                        android:id="@+id/event_level9"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:gravity="center"
+                                        android:padding="12dp">
+
+                                        <View
+                                            android:id="@+id/event_level99"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="2dp"
+                                            android:background="@drawable/background_event_view"
+                                            android:padding="0dip" />
+                                    </com.zhangwy.sample.widght.EventLinearLayout>
+                                </com.zhangwy.sample.widght.EventLinearLayout>
+                            </com.zhangwy.sample.widght.EventLinearLayout>
+                        </com.zhangwy.sample.widght.EventLinearLayout>
+                    </com.zhangwy.sample.widght.EventLinearLayout>
+                </com.zhangwy.sample.widght.EventLinearLayout>
+            </com.zhangwy.sample.widght.EventLinearLayout>
+        </com.zhangwy.sample.widght.EventLinearLayout>
+    </com.zhangwy.sample.widght.EventLinearLayout>
+</com.zhangwy.sample.widght.EventLinearLayout>

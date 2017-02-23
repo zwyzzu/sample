@@ -61,6 +61,7 @@ public class MainActivity extends BaseActivity implements RecyclerAdapter.OnItem
         samples.add(new HomeSampleItem(1, "Sample Item1", "Cycle Activity", getString(R.string.desc_cycle), CycleAActivity.class));
         samples.add(new HomeSampleItem(2, "Sample Item2", "Scroll Nested Activity", getString(R.string.desc_scroll_nested), ScrollNestedActivity.class));
         samples.add(new HomeSampleItem(3, "Sample Item3", "BaiDu Map Activity", getString(R.string.desc_map_baidu),MapBaiDuActivity.class));
+        samples.add(new HomeSampleItem(3, "Sample Item4", "Events Activity", getString(R.string.desc_event),EventActivity.class));
         return samples;
     }
 }
