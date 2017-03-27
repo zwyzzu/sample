@@ -1,7 +1,6 @@
 package com.zhangwy.sample.ui;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,7 +10,6 @@ import android.widget.TextView;
 import com.zhangwy.sample.R;
 import com.zhangwy.sample.entity.HomeSampleItem;
 import com.zwy.widget.recycler.RecyclerAdapter;
-import com.zwy.widget.recycler.RecyclerDivider;
 import com.zwy.widget.recycler.WRecyclerView;
 
 import java.util.ArrayList;

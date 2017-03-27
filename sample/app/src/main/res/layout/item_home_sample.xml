@@ -2,15 +2,16 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="@dimen/home_sample_item_height"
+    android:layout_marginTop="1dip"
+    android:background="@color/lighter_gray"
     android:orientation="horizontal">
-<!--android:background="@drawable/background_home_sample"-->
 
     <TextView
         android:id="@+id/home_sample_id"
         android:layout_width="@dimen/home_sample_item_height"
         android:layout_height="@dimen/home_sample_item_height"
-        android:background="@drawable/background_home_sample_id"
         android:gravity="center"
+        android:background="@color/darker_gray"
         android:textColor="@color/black"
         android:textSize="@dimen/font_size_2" />
 
