@@ -7,7 +7,7 @@ import com.zhangwy.sample.R;
 import com.zhangwy.sample.widght.EventLinearLayout;
 import com.zhangwy.sample.widght.EventLinearLayout.EventMethodValue;
 import com.zhangwy.sample.widght.EventLinearLayout.EventValue;
-import com.zwy.utils.Logger;
+import com.zhangwy.utils.Logger;
 
 /**
  * Created by zhangwy on 2017/2/23.

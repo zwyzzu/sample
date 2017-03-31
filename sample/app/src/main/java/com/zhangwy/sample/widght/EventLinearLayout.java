@@ -6,7 +6,7 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.widget.LinearLayout;
 
-import com.zwy.utils.Logger;
+import com.zhangwy.utils.Logger;
 
 /**
  * Created by zhangwy on 2017/2/23.

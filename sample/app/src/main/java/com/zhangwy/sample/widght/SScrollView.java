@@ -2,11 +2,10 @@ package com.zhangwy.sample.widght;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.widget.ScrollView;
 
-import com.zwy.utils.Logger;
+import com.zhangwy.utils.Logger;
 
 /**
  * Created by 张维亚(zhangwy) on 2016/12/22 下午4:25.

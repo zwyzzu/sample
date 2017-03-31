@@ -2,7 +2,7 @@ package com.zhangwy.sample.ui;
 
 import android.app.Activity;
 import android.os.Bundle;
-import com.zwy.utils.Logger;
+import com.zhangwy.utils.Logger;
 /**
  * Created by 张维亚(zhangwy) on 2016/12/20 下午4:46.
  * Updated by zhangwy on 2016/12/20 下午4:46.

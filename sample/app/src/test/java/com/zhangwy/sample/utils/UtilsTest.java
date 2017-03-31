@@ -1,6 +1,6 @@
 package com.zhangwy.sample.utils;
 
-import com.zwy.utils.Utils;
+import com.zhangwy.utils.Utils;
 
 import org.junit.Before;
 import org.junit.Test;

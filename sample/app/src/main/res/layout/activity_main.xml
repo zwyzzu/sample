@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:text="@string/desc_main" />
 
-    <com.zwy.widget.recycler.WRecyclerView
+    <com.zhangwy.widget.recycler.WRecyclerView
         android:id="@+id/main_recycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

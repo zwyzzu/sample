@@ -4,10 +4,9 @@ import android.content.Context;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
-import android.view.KeyEvent;
 import android.view.MotionEvent;
 
-import com.zwy.utils.Logger;
+import com.zhangwy.utils.Logger;
 
 /**
  * Created by 张维亚(zhangwy) on 2016/12/22 下午4:36.

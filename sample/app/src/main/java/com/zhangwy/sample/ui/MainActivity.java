@@ -9,8 +9,8 @@ import android.widget.TextView;
 
 import com.zhangwy.sample.R;
 import com.zhangwy.sample.entity.HomeSampleItem;
-import com.zwy.widget.recycler.RecyclerAdapter;
-import com.zwy.widget.recycler.WRecyclerView;
+import com.zhangwy.widget.recycler.RecyclerAdapter;
+import com.zhangwy.widget.recycler.WRecyclerView;
 
 import java.util.ArrayList;
 

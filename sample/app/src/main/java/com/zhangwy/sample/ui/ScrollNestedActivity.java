@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.zhangwy.sample.R;
-import com.zwy.widget.recycler.RecyclerAdapter;
+import com.zhangwy.widget.recycler.RecyclerAdapter;
 
 import java.util.ArrayList;
 
