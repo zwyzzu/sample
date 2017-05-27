@@ -13,6 +13,7 @@ public class HomeSampleItem extends BaseEntity{
     public HomeSampleItem(){
         super();
     }
+
     public HomeSampleItem(int code, String msg, String name, String desc, Class<?> clazz) {
         super(code, msg);
         this.setName(name);

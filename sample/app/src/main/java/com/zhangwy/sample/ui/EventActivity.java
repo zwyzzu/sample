@@ -4,10 +4,10 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.zhangwy.sample.R;
-import com.zhangwy.sample.widght.EventLinearLayout;
-import com.zhangwy.sample.widght.EventLinearLayout.EventMethodValue;
-import com.zhangwy.sample.widght.EventLinearLayout.EventValue;
-import com.zhangwy.utils.Logger;
+import com.zhangwy.sample.widget.EventLinearLayout;
+import com.zhangwy.sample.widget.EventLinearLayout.EventMethodValue;
+import com.zhangwy.sample.widget.EventLinearLayout.EventValue;
+import com.zhangwy.util.Logger;
 
 /**
  * Created by zhangwy on 2017/2/23.

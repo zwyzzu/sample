@@ -2,7 +2,9 @@ package com.zhangwy.sample.ui;
 
 import android.app.Activity;
 import android.os.Bundle;
-import com.zhangwy.utils.Logger;
+import android.widget.Toast;
+
+import com.zhangwy.util.Logger;
 /**
  * Created by 张维亚(zhangwy) on 2016/12/20 下午4:46.
  * Updated by zhangwy on 2016/12/20 下午4:46.
@@ -54,6 +56,14 @@ public class BaseActivity extends Activity{
         destroyed = true;
         super.onDestroy();
         Logger.d(TAG, "onDestroy");
+    }
+
+    public void showMsg(int msgId) {
+        Toast.makeText(this, msgId, Toast.LENGTH_LONG).show();
+    }
+
+    public void showMsg(String msg) {
+        Toast.makeText(this, msg, Toast.LENGTH_LONG).show();
     }
 
     @Override

@@ -1,4 +1,4 @@
-package com.zhangwy.sample.widght;
+package com.zhangwy.sample.widget;
 
 import android.content.Context;
 import android.text.TextUtils;
@@ -6,7 +6,7 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.widget.LinearLayout;
 
-import com.zhangwy.utils.Logger;
+import com.zhangwy.util.Logger;
 
 /**
  * Created by zhangwy on 2017/2/23.

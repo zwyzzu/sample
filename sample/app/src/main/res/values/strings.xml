@@ -10,4 +10,14 @@
     <string name="desc_scroll_nested_recyclerView">嵌套RecyclerView</string>
     <string name="desc_map_baidu">百度地图</string>
     <string name="desc_event">事件传递机制调研</string>
+    <string name="desc_system_msg">系统信息</string>
+    <string name="desc_system_msg_build">Build信息</string>
+    <string name="desc_system_msg_device">设备信息</string>
+    <string name="desc_full_window">全屏Window现实</string>
+    <string name="full_window_button_dialog">Dialog</string>
+    <string name="full_window_button_popup">PopupWindow</string>
+    <string name="desc_download">Android下载器</string>
+    <string name="btn_text_download_start">开始下载</string>
+    <string name="btn_text_download_stop">停止下载</string>
+    <string name="btn_text_download_restart">重新开始下载</string>
 </resources>

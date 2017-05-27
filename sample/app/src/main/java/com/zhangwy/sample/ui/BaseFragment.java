@@ -15,7 +15,7 @@
 ***************************************************************************************/
 package com.zwy.demo.fragment;
 
-import com.zhangwy.utils.Logger;
+import com.zhangwy.util.Logger;
 
 import android.app.Activity;
 import android.os.Bundle;

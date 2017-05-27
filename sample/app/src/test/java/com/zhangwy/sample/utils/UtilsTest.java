@@ -1,6 +1,6 @@
 package com.zhangwy.sample.utils;
 
-import com.zhangwy.utils.Utils;
+import com.zhangwy.util.Util;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -18,7 +18,7 @@ public class UtilsTest {
 
     @Test
     public void string2Array() throws Exception {
-        String[] array = Utils.string2Array(string, ",");
+        String[] array = Util.string2Array(string, ",");
         for (String str:array) {
             System.out.println(str);
         }
@@ -26,7 +26,7 @@ public class UtilsTest {
 
     @Test
     public void string2ArrayList() throws Exception {
-        ArrayList<String> array = Utils.string2ArrayList(string, ",");
+        ArrayList<String> array = Util.string2ArrayList(string, ",");
         for (String str:array) {
             System.out.println(str);
         }
@@ -35,7 +35,7 @@ public class UtilsTest {
     @Test
     public void reverser() throws Exception {
         String string = "中国人民解放军";
-        System.out.println(Utils.reverser(string));
+        System.out.println(Util.reverser(string));
     }
 
 }

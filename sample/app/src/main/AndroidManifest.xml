@@ -38,6 +38,10 @@
         <activity android:name=".ui.MapBaiDuActivity"/>
         <service android:name="com.baidu.location.f" android:enabled="true" android:process=":remote"/>
         <activity android:name=".ui.EventActivity"/>
+        <activity android:name=".ui.SystemMsgActivity"/>
+        <activity android:name=".ui.FullWindowActivity"/>
+        <activity android:name=".ui.ScreenChangesActivity" android:configChanges="keyboardHidden"/>
+        <activity android:name=".ui.DownloadActivity" android:configChanges="keyboardHidden"/>
     </application>
 
 </manifest>

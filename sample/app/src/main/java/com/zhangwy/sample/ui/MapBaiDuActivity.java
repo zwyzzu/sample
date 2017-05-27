@@ -16,7 +16,7 @@ import com.baidu.mapapi.map.Marker;
 import com.baidu.mapapi.map.MyLocationData;
 import com.baidu.mapapi.model.LatLng;
 import com.zhangwy.sample.R;
-import com.zhangwy.utils.Logger;
+import com.zhangwy.util.Logger;
 
 /**
  * Created by 张维亚(zhangwy) on 2016/12/27 下午3:47.

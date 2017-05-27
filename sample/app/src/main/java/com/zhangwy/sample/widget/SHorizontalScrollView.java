@@ -1,11 +1,11 @@
-package com.zhangwy.sample.widght;
+package com.zhangwy.sample.widget;
 
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.widget.HorizontalScrollView;
 
-import com.zhangwy.utils.Logger;
+import com.zhangwy.util.Logger;
 
 /**
  * Created by 张维亚(zhangwy) on 2016/12/22 下午4:33.

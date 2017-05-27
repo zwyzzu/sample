@@ -1,7 +1,9 @@
 include ':app'
 include ':widget'
 project(':widget').projectDir = new File(settingsDir, '../../library/widget')
-include ':utils'
-project(':utils').projectDir = new File(settingsDir, '../../library/utils')
 include ':http'
 project(':http').projectDir = new File(settingsDir, '../../library/http')
+include ':download'
+project(':download').projectDir = new File(settingsDir, '../../library/download')
+include ':common'
+project(':common').projectDir = new File(settingsDir, '../../library/common')
