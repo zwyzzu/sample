@@ -35,13 +35,29 @@
         </activity>
         <activity android:name=".ui.CycleAActivity" />
         <activity android:name=".ui.ScrollNestedActivity" />
-        <activity android:name=".ui.MapBaiDuActivity"/>
-        <service android:name="com.baidu.location.f" android:enabled="true" android:process=":remote"/>
-        <activity android:name=".ui.EventActivity"/>
-        <activity android:name=".ui.SystemMsgActivity"/>
-        <activity android:name=".ui.FullWindowActivity"/>
-        <activity android:name=".ui.ScreenChangesActivity" android:configChanges="keyboardHidden"/>
-        <activity android:name=".ui.DownloadActivity" android:configChanges="keyboardHidden"/>
+        <activity android:name=".ui.MapBaiDuActivity" />
+
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" />
+
+        <activity android:name=".ui.EventActivity" />
+        <activity android:name=".ui.SystemMsgActivity" />
+        <activity android:name=".ui.FullWindowActivity" />
+        <activity
+            android:name=".ui.ScreenChangesActivity"
+            android:configChanges="keyboardHidden" />
+        <activity
+            android:name=".ui.DownloadActivity"
+            android:configChanges="keyboardHidden" />
+        <activity
+            android:name=".ui.GifActivity"
+            android:hardwareAccelerated="false" />
+        <activity
+            android:name=".ui.UIVisibility"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

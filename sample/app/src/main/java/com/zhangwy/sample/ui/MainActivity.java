@@ -63,6 +63,8 @@ public class MainActivity extends BaseActivity implements RecyclerAdapter.OnItem
         samples.add(new HomeSampleItem(5, "Sample Item5", "System Message Activity",getString(R.string.desc_system_msg), SystemMsgActivity.class));
         samples.add(new HomeSampleItem(6, "Sample Item6", "Full Window Activity",getString(R.string.desc_full_window), FullWindowActivity.class));
         samples.add(new HomeSampleItem(7, "Sample Item7", "Download Activity", getString(R.string.desc_download), DownloadActivity.class));
+        samples.add(new HomeSampleItem(8, "Sample Item8", "GIF Activity", getString(R.string.desc_gif), GifActivity.class));
+        samples.add(new HomeSampleItem(9, "Sample Item9", "UIVisibility Activity", getString(R.string.desc_uivisibility), UIVisibility.class));
         return samples;
     }
 }
