@@ -21,6 +21,8 @@ android {
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     //java版本
     compileOptions {
@@ -48,6 +50,11 @@ android {
             zipAlignEnabled true
         }
     }
+
+    packagingOptions {
+        exclude 'LICENSE.txt'
+    }
+
     lintOptions {
         abortOnError false
     }
@@ -60,12 +67,14 @@ repositories {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:25.3.1'
-    compile 'com.android.support:recyclerview-v7:25.3.1'
-    compile project(':widget')
-    compile project(':http')
-    compile project(':download')
-    compile project(':common')
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support.constraint:constraint-layout:1.1.1'
+    testImplementation 'junit:junit:4.12'
+    implementation 'com.android.support:appcompat-v7:25.3.1'
+    implementation 'com.android.support:recyclerview-v7:25.3.1'
+    implementation 'com.android.support:design:25.3.1'
+    implementation project(':widget')
+    implementation project(':http')
+    implementation project(':download')
+    implementation project(':common')
 }

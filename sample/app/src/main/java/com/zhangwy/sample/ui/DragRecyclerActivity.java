@@ -1,8 +1,6 @@
 package com.zhangwy.sample.ui;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.LayoutInflater;
@@ -12,38 +10,33 @@ import android.widget.TextView;
 
 import com.zhangwy.sample.R;
 import com.zhangwy.sample.entity.HomeSampleItem;
+import com.zhangwy.util.Logger;
 import com.zhangwy.widget.recycler.RecyclerAdapter;
 import com.zhangwy.widget.recycler.WRecyclerView;
 
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class MainActivity extends BaseActivity implements RecyclerAdapter.OnItemClickListener<HomeSampleItem> {
+public class DragRecyclerActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        initSampleItems();
+        setContentView(R.layout.activity_drag_recycler);
+        this.initSampleItems();
     }
 
     private void initSampleItems() {
-        final WRecyclerView<HomeSampleItem> view = (WRecyclerView<HomeSampleItem>) findViewById(R.id.main_recycler);
-        view.setLinearLayoutManager(WRecyclerView.VERTICAL, false);
-        view.setOnItemClickListener(this);
+        final WRecyclerView<HomeSampleItem> view = (WRecyclerView<HomeSampleItem>) findViewById(R.id.dragRecycler);
+        view.setLinearLayoutManager(WRecyclerView.HORIZONTAL, false);
         final ArrayList<HomeSampleItem> items = this.getSampleItems();
         view.loadData(items, new HomeAdapter());
+
         ItemTouchHelper helper = new ItemTouchHelper(new ItemTouchHelper.Callback() {
             @Override
             public int getMovementFlags(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
-                if (recyclerView.getLayoutManager() instanceof GridLayoutManager) {
-                    final int dragFlags = ItemTouchHelper.UP | ItemTouchHelper.DOWN | ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT;
-                    final int swipeFlags = 0;
-                    return makeMovementFlags(dragFlags, swipeFlags);
-                } else {
-                    final int dragFlags = ItemTouchHelper.UP | ItemTouchHelper.DOWN | ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT;
-                    final int swipeFlags = 0;
-                    return makeMovementFlags(dragFlags, swipeFlags);
-                }
+                final int dragFlags = ItemTouchHelper.UP | ItemTouchHelper.DOWN | ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT;
+                final int swipeFlags = 0;
+                return makeMovementFlags(dragFlags, swipeFlags);
             }
 
             @Override
@@ -67,28 +60,36 @@ public class MainActivity extends BaseActivity implements RecyclerAdapter.OnItem
 
             @Override
             public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
+                Logger.d(direction + "");
+                view.notifyDataSetChanged();
             }
-//
-//            @Override
-//            public void onSelectedChanged(RecyclerView.ViewHolder viewHolder, int actionState) {
-//                if (actionState != ItemTouchHelper.ACTION_STATE_IDLE) {
-//                    viewHolder.itemView.setBackgroundColor(Color.LTGRAY);
-//                }
-//                super.onSelectedChanged(viewHolder, actionState);
-//            }
-//
-//            @Override
-//            public void clearView(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
-//                super.clearView(recyclerView, viewHolder);
-//                viewHolder.itemView.setBackgroundColor(0);
-//            }
+
+            @Override
+            public void onSelectedChanged(RecyclerView.ViewHolder viewHolder, int actionState) {
+                if (actionState != ItemTouchHelper.ACTION_STATE_IDLE) {
+                    ViewGroup.LayoutParams layoutParams = viewHolder.itemView.getLayoutParams();
+                    if (layoutParams != null) {
+                        layoutParams.width = getResources().getDimensionPixelOffset(R.dimen.drag_item_length_drag);
+                        layoutParams.height = getResources().getDimensionPixelOffset(R.dimen.drag_item_length_drag);
+                        viewHolder.itemView.setLayoutParams(layoutParams);
+                    }
+                }
+                super.onSelectedChanged(viewHolder, actionState);
+            }
+
+            @Override
+            public void clearView(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
+                super.clearView(recyclerView, viewHolder);
+                ViewGroup.LayoutParams layoutParams = viewHolder.itemView.getLayoutParams();
+                if (layoutParams != null) {
+                    layoutParams.width = getResources().getDimensionPixelOffset(R.dimen.drag_item_length_default);
+                    layoutParams.height = getResources().getDimensionPixelOffset(R.dimen.drag_item_length_default);
+                    viewHolder.itemView.setLayoutParams(layoutParams);
+                }
+                view.reload(items);
+            }
         });
         helper.attachToRecyclerView(view);
-    }
-
-    @Override
-    public void onItemClick(View view, int viewType, HomeSampleItem entity, int position) {
-        startActivity(new Intent(this, entity.getClazz()));
     }
 
     private static class HomeAdapter extends RecyclerAdapter.OnItemLoading<HomeSampleItem> {
@@ -100,14 +101,13 @@ public class MainActivity extends BaseActivity implements RecyclerAdapter.OnItem
 
         @Override
         public View onCreateView(ViewGroup parent, int viewType) {
-            return LayoutInflater.from(parent.getContext()).inflate(R.layout.item_home_sample, parent, false);
+            return LayoutInflater.from(parent.getContext()).inflate(R.layout.item_drag_recycler, parent, false);
         }
 
         @Override
         public void onLoadView(View root, int viewType, HomeSampleItem entity, int position) {
-            ((TextView) root.findViewById(R.id.home_sample_id)).setText(String.valueOf(entity.getCode()));
-            ((TextView) root.findViewById(R.id.home_sample_title)).setText(entity.getName());
-            ((TextView) root.findViewById(R.id.home_sample_desc)).setText(entity.getDesc());
+            ((TextView) root.findViewById(R.id.dragItem)).setText(String.valueOf(entity.getCode()));
+            ((TextView) root.findViewById(R.id.dragPosition)).setText(String.valueOf(position + 1));
         }
     }
 
@@ -127,9 +127,6 @@ public class MainActivity extends BaseActivity implements RecyclerAdapter.OnItem
         samples.add(new HomeSampleItem(samples.size() + 1, "Sample Item" + samples.size() + 1, "Widget Activity", getString(R.string.desc_widget), WidgetActivity.class));
         samples.add(new HomeSampleItem(samples.size() + 1, "Sample Item" + samples.size() + 1, "Spannble Activity", getString(R.string.desc_spannable), SpannableActivity.class));
         samples.add(new HomeSampleItem(samples.size() + 1, "Sample Item" + samples.size() + 1, "drag Activity", getString(R.string.desc_drag), DragRecyclerActivity.class));
-        samples.add(new HomeSampleItem(samples.size() + 1, "Sample Item" + samples.size() + 1, "drag Activity", getString(R.string.desc_canvas), CanvasActivity.class));
-        samples.add(new HomeSampleItem(samples.size() + 1, "Sample Item" + samples.size() + 1, "Flow Activity", getString(R.string.desc_flow), FlowLayoutActivity.class));
-        samples.add(new HomeSampleItem(samples.size() + 1, "Sample Item" + samples.size() + 1, "File Activity", getString(R.string.desc_file), FileActivity.class));
         return samples;
     }
 }

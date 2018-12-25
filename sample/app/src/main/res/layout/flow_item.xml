@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/flowItem"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#F5F5F5"
+    android:paddingBottom="4dp"
+    android:paddingEnd="11dp"
+    android:paddingLeft="11dp"
+    android:paddingRight="11dp"
+    android:paddingStart="11dp"
+    android:paddingTop="4dp"
+    android:textColor="#A2A3A5" />

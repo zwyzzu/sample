@@ -16,6 +16,14 @@
     <string name="desc_full_window">全屏Window现实</string>
     <string name="desc_gif">GIF图</string>
     <string name="desc_uivisibility">UIVisibility</string>
+    <string name="desc_seekbar">SeekBar</string>
+    <string name="desc_permission">全线广播</string>
+    <string name="desc_widget">自定义控件</string>
+    <string name="desc_spannable">富文本</string>
+    <string name="desc_drag">拖拽列表</string>
+    <string name="desc_canvas">Canvas</string>
+    <string name="desc_flow">FlowLayout</string>
+    <string name="desc_file">File</string>
     <string name="full_window_button_dialog">Dialog</string>
     <string name="full_window_button_popup">PopupWindow</string>
     <string name="desc_download">Android下载器</string>
@@ -26,4 +34,15 @@
     <string name="btn_text_untransparent">设置不透明</string>
     <string name="btn_text_toLandscape">横屏</string>
     <string name="btn_text_toPortrait">竖屏</string>
+    <string name="permission_msg">行为:%1$s&#160;&#160;结果:%2$s&#160;&#160;耗时:%3$d秒</string>
+    <string name="send">send</string>
+    <string name="spannable_background">背景颜色</string>
+    <string name="spannable_fontColor">字体颜色</string>
+    <string name="spannable_fontStyle">字体样式</string>
+    <string name="spannable_fontFace">字体</string>
+    <string name="spannable_image">图片</string>
+    <string name="spannable_url">链接</string>
+    <string name="spannable_underline">下划线</string>
+    <string name="spannable_strikeThrough">删除线</string>
+    <string name="md5_text">MD5:%1$s\nTime:%2$d</string>
 </resources>

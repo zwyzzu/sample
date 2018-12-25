@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/dragItemHome"
+    android:layout_width="@dimen/drag_item_length_default"
+    android:layout_height="@dimen/drag_item_length_default"
+    android:layout_margin="1dp"
+    android:background="@color/darker_gray"
+    android:gravity="center"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/dragItem"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:background="@color/darker_gray"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_size_2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/dragPosition"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:gravity="center"
+        android:background="@android:color/black"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/dragItem"
+        app:layout_constraintEnd_toEndOf="parent" />
+</android.support.constraint.ConstraintLayout>

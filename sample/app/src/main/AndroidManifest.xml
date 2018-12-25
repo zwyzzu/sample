@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.zhangwy.sample">
 
     <!-- 这个权限用于进行网络定位 -->
@@ -16,6 +17,18 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <!-- 访问网络，网络定位需要上网 -->
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.android.permission.Receive_LOG" />
+
+    <permission
+        android:name="com.android.permission.RECEIVE_LOG"
+        android:protectionLevel="normal" />
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission
+        android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
+        tools:ignore="ProtectedPermissions" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -58,6 +71,15 @@
             android:name=".ui.UIVisibility"
             android:configChanges="keyboard|orientation|screenSize"
             android:screenOrientation="portrait" />
+        <activity android:name=".ui.ScaleSeekBarActivity" />
+        <activity android:name=".ui.PermissionBroadcastActivity" />
+        <activity android:name=".ui.WidgetActivity" />
+        <activity android:name=".ui.SpannableActivity" />
+        <activity android:name=".ui.DragRecyclerActivity" />
+        <activity android:name=".ui.TopBarActivity" />
+        <activity android:name=".ui.CanvasActivity" />
+        <activity android:name=".ui.FlowLayoutActivity" />
+        <activity android:name=".ui.FileActivity"></activity>
     </application>
 
 </manifest>

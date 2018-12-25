@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.zhangwy.widget.recycler.WRecyclerView
+        android:id="@+id/spannable_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_8" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_margin="@dimen/margin_8"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/spannable_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/background"
+            android:layout_gravity="top"
+            android:gravity="top"
+            android:minLines="20"/>
+    </ScrollView>
+
+</LinearLayout>
