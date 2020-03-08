@@ -130,6 +130,9 @@ public class MainActivity extends BaseActivity implements RecyclerAdapter.OnItem
         samples.add(new HomeSampleItem(samples.size() + 1, "Sample Item" + samples.size() + 1, "drag Activity", getString(R.string.desc_canvas), CanvasActivity.class));
         samples.add(new HomeSampleItem(samples.size() + 1, "Sample Item" + samples.size() + 1, "Flow Activity", getString(R.string.desc_flow), FlowLayoutActivity.class));
         samples.add(new HomeSampleItem(samples.size() + 1, "Sample Item" + samples.size() + 1, "File Activity", getString(R.string.desc_file), FileActivity.class));
+        samples.add(new HomeSampleItem(samples.size() + 1, "Sample Item" + samples.size() + 1, "NetWork Activity", getString(R.string.desc_network), NetworkActivity.class));
+        samples.add(new HomeSampleItem(samples.size() + 1, "Sample Item" + samples.size() + 1, "Ping Activity", getString(R.string.desc_ping), PingActivity.class));
+        samples.add(new HomeSampleItem(samples.size() + 1, "Sample Item" + samples.size() + 1, "Alert Window Activity", getString(R.string.desc_alert_window), SmallWindowActivity.class));
         return samples;
     }
 }

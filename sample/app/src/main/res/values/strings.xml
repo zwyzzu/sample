@@ -24,6 +24,9 @@
     <string name="desc_canvas">Canvas</string>
     <string name="desc_flow">FlowLayout</string>
     <string name="desc_file">File</string>
+    <string name="desc_network">网络强度</string>
+    <string name="desc_ping">Ping信息</string>
+    <string name="desc_alert_window">浮窗</string>
     <string name="full_window_button_dialog">Dialog</string>
     <string name="full_window_button_popup">PopupWindow</string>
     <string name="desc_download">Android下载器</string>
@@ -45,4 +48,8 @@
     <string name="spannable_underline">下划线</string>
     <string name="spannable_strikeThrough">删除线</string>
     <string name="md5_text">MD5:%1$s\nTime:%2$d</string>
+    <string name="hint_input_path">请输入地址</string>
+    <string name="button_ping">执行</string>
+    <string name="show">显示</string>
+    <string name="close">关闭</string>
 </resources>
