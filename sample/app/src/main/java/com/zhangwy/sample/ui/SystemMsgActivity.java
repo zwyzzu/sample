@@ -1,8 +1,11 @@
 package com.zhangwy.sample.ui;
 
+import android.Manifest;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.telephony.TelephonyManager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +19,7 @@ import com.zhangwy.widget.recycler.RecyclerAdapter;
 import com.zhangwy.widget.recycler.WRecyclerView;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * Author: zhangwy(张维亚)
@@ -77,6 +81,7 @@ public class SystemMsgActivity extends BaseActivity {
     private void loadMsg() {
         this.loadBuilds();
         this.loadDevice();
+        this.loadPermission();
     }
 
     public SystemMsgItem newRootInstance(String name) {
@@ -160,10 +165,42 @@ public class SystemMsgActivity extends BaseActivity {
         devices.add(newRootInstance(getString(R.string.desc_system_msg_device)));
         try {
             TelephonyManager manager = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
+            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
+                return;
+            }
             devices.add(newItemInstance("DeviceId", manager.getDeviceId()));
         } catch (Exception e) {
             Logger.d("loadDevice", e);
         }
+        devices.add(newItemInstance("IMEI", Device.Dev.getDeviceID(this)));
+        devices.add(newItemInstance("IMSI", Device.Dev.getOperators(this).getName()));
+        devices.add(newItemInstance("SSNumber", Device.Dev.getSimSerialNumber(this)));
+        for (int i = 0; i < 50; i++) {
+            Device.Dev.getOperators(this);
+            Device.Dev.getDeviceID(this);
+        }
         recyclerView.addAll(devices);
+    }
+
+    private void loadPermission() {
+        ArrayList<SystemMsgItem> permission = new ArrayList<>();
+        permission.add(newRootInstance(getString(R.string.desc_system_msg_permission)));
+        PackageManager pkgManager = this.getPackageManager();
+        try {
+            String[] array = pkgManager.getPackageInfo(this.getPackageName(), PackageManager.GET_PERMISSIONS).requestedPermissions;
+            for (String permissionString: array) {
+                permission.add(hashPermission(this, permissionString));
+            }
+        } catch (PackageManager.NameNotFoundException e) {
+            //
+        }
+        permission.add(hashPermission(this, Manifest.permission.READ_SMS));
+        permission.add(hashPermission(this, Manifest.permission.RECORD_AUDIO));
+        recyclerView.addAll(permission);
+    }
+
+    private SystemMsgItem hashPermission(Context context, String permission) {
+        PackageManager pkgManager = context.getPackageManager();
+        return newItemInstance(permission.replace("android.permission.", ""), pkgManager.checkPermission(permission, context.getPackageName()) == PackageManager.PERMISSION_GRANTED);
     }
 }

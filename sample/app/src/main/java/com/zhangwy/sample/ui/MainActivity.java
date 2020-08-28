@@ -133,6 +133,9 @@ public class MainActivity extends BaseActivity implements RecyclerAdapter.OnItem
         samples.add(new HomeSampleItem(samples.size() + 1, "Sample Item" + samples.size() + 1, "NetWork Activity", getString(R.string.desc_network), NetworkActivity.class));
         samples.add(new HomeSampleItem(samples.size() + 1, "Sample Item" + samples.size() + 1, "Ping Activity", getString(R.string.desc_ping), PingActivity.class));
         samples.add(new HomeSampleItem(samples.size() + 1, "Sample Item" + samples.size() + 1, "Alert Window Activity", getString(R.string.desc_alert_window), SmallWindowActivity.class));
+        samples.add(new HomeSampleItem(samples.size() + 1, "Sample Item" + samples.size() + 1, "Suspension Activity", getString(R.string.desc_suspension), SuspensionBarActivity.class));
+        samples.add(new HomeSampleItem(samples.size() + 1, "Sample Item" + samples.size() + 1, "AppList Activity", getString(R.string.desc_app_list), AppListActivity.class));
+        samples.add(new HomeSampleItem(samples.size() + 1, "Sample Item" + samples.size() + 1, "Location Activity", getString(R.string.desc_location), LocationActivity.class));
         return samples;
     }
 }

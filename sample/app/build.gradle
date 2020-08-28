@@ -73,8 +73,11 @@ dependencies {
     implementation 'com.android.support:appcompat-v7:26.1.0'
     implementation 'com.android.support:recyclerview-v7:26.1.0'
     implementation 'com.android.support:design:26.1.0'
+    implementation 'com.squareup.picasso:picasso:2.5.2'
     implementation project(':widget')
     implementation project(':http')
     implementation project(':download')
     implementation project(':common')
+    implementation 'com.umeng.sdk:utdid:1.1.5.3'
+    implementation 'com.alibaba:fastjson:1.2.72'
 }

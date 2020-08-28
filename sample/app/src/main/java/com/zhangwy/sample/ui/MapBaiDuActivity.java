@@ -1,7 +1,13 @@
 package com.zhangwy.sample.ui;
 
+import android.annotation.SuppressLint;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Bundle;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
 import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
 import com.baidu.location.LocationClient;
@@ -38,6 +44,36 @@ public class MapBaiDuActivity extends BaseActivity implements BaiduMap.OnMarkerD
         mapView.getMap().setOnMarkerDragListener(this);
         mapView.getMap().setOnMapClickListener(this);
         myLocation();
+        gpsLocation();
+    }
+
+    @SuppressLint("MissingPermission")
+    private void gpsLocation() {
+        LocationManager manager = (LocationManager) this.getSystemService(LOCATION_SERVICE);
+        if (manager == null) {
+            return;
+        }
+        Logger.d("Providers" + JSONArray.toJSONString(manager.getAllProviders()));
+        Location location = manager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+        Logger.d(JSON.toJSONString(location));
+        manager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 100, 0, new android.location.LocationListener() {
+            @Override
+            public void onLocationChanged(Location location) {
+                Logger.d(JSON.toJSONString(location));
+            }
+
+            @Override
+            public void onStatusChanged(String provider, int status, Bundle extras) {
+            }
+
+            @Override
+            public void onProviderEnabled(String provider) {
+            }
+
+            @Override
+            public void onProviderDisabled(String provider) {
+            }
+        });
     }
 
     private void myLocation() {

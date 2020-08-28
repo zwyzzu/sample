@@ -13,6 +13,7 @@
     <string name="desc_system_msg">系统信息</string>
     <string name="desc_system_msg_build">Build信息</string>
     <string name="desc_system_msg_device">设备信息</string>
+    <string name="desc_system_msg_permission">权限信息</string>
     <string name="desc_full_window">全屏Window现实</string>
     <string name="desc_gif">GIF图</string>
     <string name="desc_uivisibility">UIVisibility</string>
@@ -27,6 +28,9 @@
     <string name="desc_network">网络强度</string>
     <string name="desc_ping">Ping信息</string>
     <string name="desc_alert_window">浮窗</string>
+    <string name="desc_suspension">RecyclerView浮动条</string>
+    <string name="desc_app_list">应用列表</string>
+    <string name="desc_location">地理位置</string>
     <string name="full_window_button_dialog">Dialog</string>
     <string name="full_window_button_popup">PopupWindow</string>
     <string name="desc_download">Android下载器</string>
@@ -52,4 +56,10 @@
     <string name="button_ping">执行</string>
     <string name="show">显示</string>
     <string name="close">关闭</string>
+    <string name="suspensionBarSingle">单独浮动条</string>
+    <string name="suspensionBarMulti">复合滑动条</string>
+    <string name="action_save">保存</string>
+    <string name="action_select_app">选择APP</string>
+    <string name="action_refresh">刷新</string>
+    <string name="action_request_location">请求地理位置</string>
 </resources>
