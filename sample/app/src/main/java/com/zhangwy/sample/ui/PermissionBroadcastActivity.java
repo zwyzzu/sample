@@ -33,7 +33,7 @@ public class PermissionBroadcastActivity extends BaseActivity implements View.On
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_permission);
+        setContentView(R.layout.activity_permission_broadcast);
         findViewById(R.id.permission_send).setOnClickListener(this);
         this.recyclerView = (WRecyclerView<AutoMsgItem>) findViewById(R.id.permission_recycle);
         this.recyclerView.setVisibility(View.VISIBLE);
