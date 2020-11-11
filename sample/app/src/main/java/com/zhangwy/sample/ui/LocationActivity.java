@@ -16,7 +16,6 @@ import java.util.List;
 
 @SuppressLint("MissingPermission")
 public class LocationActivity extends BaseActivity implements View.OnClickListener {
-
     private LocationManager manager;
     private TextView requestMessage;
     private TextView requestProviders;
@@ -63,19 +62,20 @@ public class LocationActivity extends BaseActivity implements View.OnClickListen
     }
 
     private String location2String(Location location) {
-        String builder = "Latitude：" + location.getLatitude() + '\n' +
-                "Longitude：" + location.getLongitude() + '\n' +
-                "Altitude：" + location.getAltitude() + '\n' +
-                "Altitude：" + location.hasAltitude() + '\n' +
-                "Time：" + location.getTime() + '\n' +
-                "Provider：" + location.getProvider() + '\n' +
-                "Speed：" + location.getSpeed() + '\n' +
-                "Speed：" + location.hasSpeed() + '\n' +
-                "Bearing：" + location.getBearing() + '\n' +
-                "Bearing：" + location.hasBearing() + '\n' +
-                "Accuracy：" + location.getAccuracy() + '\n' +
-                "Accuracy：" + location.hasAccuracy() + '\n';
-        return builder;
+        StringBuilder builder = new StringBuilder();
+        builder.append("Latitude：").append(location.getLatitude()).append('\n');
+        builder.append("Longitude：").append(location.getLongitude()).append('\n');
+        builder.append("Altitude：").append(location.getAltitude()).append('\n');
+        builder.append("Altitude：").append(location.hasAltitude()).append('\n');
+        builder.append("Speed：").append(location.getSpeed()).append('\n');
+        builder.append("Speed：").append(location.hasSpeed()).append('\n');
+        builder.append("Bearing：").append(location.getBearing()).append('\n');
+        builder.append("Bearing：").append(location.hasBearing()).append('\n');
+        builder.append("Accuracy：").append(location.getAccuracy()).append('\n');
+        builder.append("Accuracy：").append(location.hasAccuracy()).append('\n');
+        builder.append("Provider：").append(location.getProvider()).append('\n');
+        builder.append("Time：").append(location.getTime()).append('\n');
+        return builder.toString();
     }
 
     private class RLocationListener implements LocationListener {

@@ -1,10 +1,24 @@
 package com.zhangwy.sample.ui;
 
+import android.app.ActivityManager;
+import android.bluetooth.BluetoothAdapter;
+import android.content.Context;
 import android.content.Intent;
+import android.hardware.Camera;
+import android.hardware.camera2.CameraManager;
+import android.location.LocationManager;
+import android.media.AudioRecord;
+import android.media.MediaRecorder;
+import android.net.ConnectivityManager;
+import android.net.wifi.WifiManager;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.PowerManager;
+import android.os.Vibrator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
+import android.telephony.TelephonyManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,6 +38,29 @@ public class MainActivity extends BaseActivity implements RecyclerAdapter.OnItem
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initSampleItems();
+
+        ActivityManager manager = (ActivityManager) this.getApplicationContext().getSystemService(Context.ACTIVITY_SERVICE);
+        if (manager != null) {
+            manager.restartPackage(getPackageName());
+            manager.getRunningServices(1);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                manager.getAppTasks();
+            }
+            manager.getRunningTasks(1).get(0).topActivity.getPackageName();
+        }
+        PowerManager powerManager;
+        ConnectivityManager connectivityManager;
+        TelephonyManager telephonyManager;
+        WifiManager wifiManager;
+        Vibrator vibrator;
+        AudioRecord audioRecord = new AudioRecord(0, 0, 0, 0, 0);
+        MediaRecorder mediaRecorder = new MediaRecorder();
+        BluetoothAdapter bluetoothAdapter;
+        ActivityManager activityManager;
+        PowerManager.WakeLock wakeLock;
+        LocationManager locationManager;
+        CameraManager cameraManager;
+        Camera.Parameters parameters;
     }
 
     private void initSampleItems() {
@@ -136,6 +173,7 @@ public class MainActivity extends BaseActivity implements RecyclerAdapter.OnItem
         samples.add(new HomeSampleItem(samples.size() + 1, "Sample Item" + samples.size() + 1, "Suspension Activity", getString(R.string.desc_suspension), SuspensionBarActivity.class));
         samples.add(new HomeSampleItem(samples.size() + 1, "Sample Item" + samples.size() + 1, "AppList Activity", getString(R.string.desc_app_list), AppListActivity.class));
         samples.add(new HomeSampleItem(samples.size() + 1, "Sample Item" + samples.size() + 1, "Location Activity", getString(R.string.desc_location), LocationActivity.class));
+        samples.add(new HomeSampleItem(samples.size() + 1, "Sample Item" + samples.size() + 1, "JSON Activity", getString(R.string.desc_json), JsonActivity.class));
         return samples;
     }
 }
