@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/padding_16"
+    tools:context=".ui.PermissionActivity">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/permissionAccessNotificationPolicyVolumeText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_home_sample"
+            android:gravity="center_vertical"
+            android:lineSpacingExtra="@dimen/padding_8"
+            android:padding="@dimen/padding_8"
+            android:text="@string/notification_manager_volume_value"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/permissionAccessNotificationPolicyVolumeIncrease"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="@dimen/margin_16"
+            android:layout_marginEnd="@dimen/margin_8"
+            android:layout_marginRight="@dimen/margin_8"
+            android:text="@string/button_notification_manager_volume_increase"
+            app:layout_constraintEnd_toStartOf="@id/permissionAccessNotificationPolicyVolumeRefresh"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/permissionAccessNotificationPolicyVolumeRefresh"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/permissionAccessNotificationPolicyVolumeText" />
+
+        <Button
+            android:id="@+id/permissionAccessNotificationPolicyVolumeRefresh"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="@dimen/margin_8"
+            android:layout_marginLeft="@dimen/margin_8"
+            android:layout_marginEnd="@dimen/margin_8"
+            android:layout_marginRight="@dimen/margin_8"
+            android:text="@string/action_refresh"
+            app:layout_constraintEnd_toStartOf="@id/permissionAccessNotificationPolicyVolumeReduce"
+            app:layout_constraintLeft_toRightOf="@id/permissionAccessNotificationPolicyVolumeIncrease"
+            app:layout_constraintRight_toLeftOf="@id/permissionAccessNotificationPolicyVolumeReduce"
+            app:layout_constraintStart_toEndOf="@id/permissionAccessNotificationPolicyVolumeIncrease"
+            app:layout_constraintTop_toTopOf="@id/permissionAccessNotificationPolicyVolumeIncrease" />
+
+        <Button
+            android:id="@+id/permissionAccessNotificationPolicyVolumeReduce"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="@dimen/margin_8"
+            android:layout_marginLeft="@dimen/margin_8"
+            android:text="@string/button_notification_manager_volume_reduce"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/permissionAccessNotificationPolicyVolumeRefresh"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toEndOf="@id/permissionAccessNotificationPolicyVolumeRefresh"
+            app:layout_constraintTop_toTopOf="@id/permissionAccessNotificationPolicyVolumeIncrease" />
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>

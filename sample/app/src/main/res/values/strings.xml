@@ -32,6 +32,7 @@
     <string name="desc_app_list">应用列表</string>
     <string name="desc_location">地理位置</string>
     <string name="desc_json">JSON</string>
+    <string name="desc_permission_list">Permission</string>
     <string name="full_window_button_dialog">Dialog</string>
     <string name="full_window_button_popup">PopupWindow</string>
     <string name="desc_download">Android下载器</string>

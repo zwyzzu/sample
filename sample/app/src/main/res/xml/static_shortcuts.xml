@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <shortcut
+        android:enabled="true"
+        android:icon="@mipmap/ic_launcher"
+        android:shortcutDisabledMessage="@string/name_main"
+        android:shortcutId="shortcut_id_main"
+        android:shortcutLongLabel="@string/name_main"
+        android:shortcutShortLabel="@string/name_main"
+        tools:ignore="UnusedAttribute">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetClass="com.example.song.jackwaiting.MainActivity"
+            android:targetPackage="com.example.song.jackwaiting" />
+        <categories android:name="android.shortcut.conversation" />
+    </shortcut>
+</shortcuts>
