@@ -67,4 +67,7 @@
     <string name="button_notification_manager_volume_increase">音量加</string>
     <string name="button_notification_manager_volume_reduce">音量减</string>
     <string name="notification_manager_volume_value">音量值：%1$d\n最大音量：%2$d</string>
+    <string name="sensor_list">传感器列表：</string>
+    <string name="sensor_type">传感器：</string>
+    <string name="sensor_hint">请输入传感器类型</string>
 </resources>
