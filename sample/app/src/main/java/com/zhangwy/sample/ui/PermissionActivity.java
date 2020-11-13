@@ -1,14 +1,18 @@
 package com.zhangwy.sample.ui;
 
+import android.Manifest;
 import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.media.AudioManager;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.support.v4.app.ActivityCompat;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -33,6 +37,8 @@ public class PermissionActivity extends BaseActivity {
         setContentView(R.layout.activity_permission);
         this.refreshVolume();
         this.refreshSensor();
+        this.refreshCall();
+        this.refreshPrivileged();
     }
 
     private void refreshVolume() {
@@ -167,5 +173,41 @@ public class PermissionActivity extends BaseActivity {
                 typeSensor.setText(builder.toString());
             }
         });
+    }
+
+    private void refreshCall() {
+        final EditText text = this.findViewById(R.id.permissionCallPhoneInput);
+        this.findViewById(R.id.permissionCallPhoneButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String textString = text.getText().toString();
+                Intent intent = new Intent(Intent.ACTION_CALL);
+                intent.setData(Uri.parse("tel:" + textString));
+                if (ActivityCompat.checkSelfPermission(PermissionActivity.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                    return;
+                }
+                startActivity(intent);
+            }
+        });
+    }
+
+    private void refreshPrivileged() {
+        final EditText text = this.findViewById(R.id.permissionCallPrivilegedInput);
+        this.findViewById(R.id.permissionCallPrivilegedButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String textString = text.getText().toString();
+                Intent intent = new Intent("android.intent.action.CALL_PRIVILEGED");
+                intent.setData(Uri.parse("tel:" + textString));
+                if (ActivityCompat.checkSelfPermission(PermissionActivity.this, Manifest.permission.CALL_PRIVILEGED) != PackageManager.PERMISSION_GRANTED) {
+                    return;
+                }
+                startActivity(intent);
+            }
+        });
+    }
+
+    private void refreshCache() {
+
     }
 }

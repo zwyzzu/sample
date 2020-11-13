@@ -70,4 +70,6 @@
     <string name="sensor_list">传感器列表：</string>
     <string name="sensor_type">传感器：</string>
     <string name="sensor_hint">请输入传感器类型</string>
+    <string name="action_call">拨打电话</string>
+    <string name="hint_call">请输入电话号码</string>
 </resources>
