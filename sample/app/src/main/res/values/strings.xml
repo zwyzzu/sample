@@ -33,6 +33,7 @@
     <string name="desc_location">地理位置</string>
     <string name="desc_json">JSON</string>
     <string name="desc_permission_list">Permission</string>
+    <string name="desc_short_cut_badger">图表红点</string>
     <string name="full_window_button_dialog">Dialog</string>
     <string name="full_window_button_popup">PopupWindow</string>
     <string name="desc_download">Android下载器</string>
@@ -72,4 +73,5 @@
     <string name="sensor_hint">请输入传感器类型</string>
     <string name="action_call">拨打电话</string>
     <string name="hint_call">请输入电话号码</string>
+    <string name="hint_input_number">请输入数字</string>
 </resources>

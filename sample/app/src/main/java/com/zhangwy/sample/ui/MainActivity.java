@@ -1,6 +1,7 @@
 package com.zhangwy.sample.ui;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 
 import com.zhangwy.sample.R;
 import com.zhangwy.sample.entity.HomeSampleItem;
+import com.zhangwy.util.Logger;
 import com.zhangwy.widget.recycler.RecyclerAdapter;
 import com.zhangwy.widget.recycler.WRecyclerView;
 
@@ -24,6 +26,11 @@ public class MainActivity extends BaseActivity implements RecyclerAdapter.OnItem
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initSampleItems();
+        PackageManager manager1 = this.getApplication().getPackageManager();
+        PackageManager manager = this.getPackageManager();
+        if (manager == null) {
+            Logger.d("manager == null");
+        }
     }
 
     private void initSampleItems() {
@@ -138,6 +145,7 @@ public class MainActivity extends BaseActivity implements RecyclerAdapter.OnItem
         samples.add(new HomeSampleItem(samples.size() + 1, "Sample Item" + samples.size() + 1, "Location Activity", getString(R.string.desc_location), LocationActivity.class));
         samples.add(new HomeSampleItem(samples.size() + 1, "Sample Item" + samples.size() + 1, "JSON Activity", getString(R.string.desc_json), JsonActivity.class));
         samples.add(new HomeSampleItem(samples.size() + 1, "Sample Item" + samples.size() + 1, "Permission Activity", getString(R.string.desc_permission_list), PermissionActivity.class));
+        samples.add(new HomeSampleItem(samples.size() + 1, "Sample Item" + samples.size() + 1, "Short Cut Badger Activity", getString(R.string.desc_short_cut_badger), ShortCutBadgerActivity.class));
         return samples;
     }
 }
