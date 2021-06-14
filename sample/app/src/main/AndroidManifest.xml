@@ -41,7 +41,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup">
-        <activity android:name=".ui.ShortCutBadgerActivity"></activity>
+        <activity android:name=".ui.NetworkAccessActivity"></activity>
+        <activity android:name=".ui.ShortCutBadgerActivity" />
 
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
@@ -102,6 +103,19 @@
             android:name="com.baidu.location.f"
             android:enabled="true"
             android:process=":remote" />
+
+        <receiver android:name=".receiver.MyReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.SCREEN_OFF" />
+                <action android:name="android.intent.action.SCREEN_ON" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="android.intent.action.USER_UNLOCKED" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="android.intent.action.PACKAGE_INSTALL" />
+                <action android:name="android.intent.action.PACKAGE_CHANGED" />
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

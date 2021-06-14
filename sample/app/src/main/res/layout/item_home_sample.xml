@@ -1,55 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="@dimen/home_sample_item_height"
-    android:layout_marginTop="1dip"
-    android:background="@color/lighter_gray"
-    android:orientation="horizontal">
+    android:background="@color/lighter_gray">
 
     <TextView
         android:id="@+id/home_sample_id"
-        android:layout_width="@dimen/home_sample_item_height"
-        android:layout_height="@dimen/home_sample_item_height"
-        android:gravity="center"
+        android:layout_width="@dimen/home_sample_item_index"
+        android:layout_height="@dimen/home_sample_item_index"
         android:background="@color/darker_gray"
+        android:gravity="center"
         android:textColor="@color/black"
-        android:textSize="@dimen/font_size_2" />
+        android:textSize="@dimen/font_size_2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
-        android:layout_width="0dip"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
+    <TextView
+        android:id="@+id/home_sample_title"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/home_sample_item_index"
+        android:layout_gravity="top"
         android:gravity="center_vertical"
-        android:orientation="vertical">
+        android:maxLines="1"
+        android:paddingStart="@dimen/padding_8"
+        android:paddingLeft="@dimen/padding_8"
+        android:paddingEnd="@dimen/padding_8"
+        android:paddingRight="@dimen/padding_8"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_size_3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/home_sample_id"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toEndOf="@id/home_sample_id"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/home_sample_title"
-            android:layout_width="match_parent"
-            android:layout_height="32dip"
-            android:layout_gravity="top"
-            android:gravity="center_vertical"
-            android:maxLines="1"
-            android:textColor="@color/black"
-            android:textSize="@dimen/font_size_3" />
+    <TextView
+        android:id="@+id/home_sample_desc"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="bottom"
+        android:gravity="center_vertical"
+        android:maxLines="2"
+        android:paddingStart="@dimen/padding_8"
+        android:paddingLeft="@dimen/padding_8"
+        android:paddingEnd="@dimen/padding_8"
+        android:paddingRight="@dimen/padding_8"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="@dimen/font_size_5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/home_sample_id" />
 
-        <TextView
-            android:id="@+id/home_sample_desc"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="bottom"
-            android:gravity="center_vertical"
-            android:maxLines="2"
-            android:textColor="@android:color/darker_gray"
-            android:textSize="@dimen/font_size_5" />
-    </LinearLayout>
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="@dimen/home_sample_item_height"
-        android:layout_marginLeft="@dimen/activity_horizontal_margin"
-        android:layout_marginRight="@dimen/activity_horizontal_margin"
-        android:contentDescription="@string/app_name"
-        android:scaleType="center"
-        android:src="@drawable/icon_jump" />
-</LinearLayout>
+</android.support.constraint.ConstraintLayout>
