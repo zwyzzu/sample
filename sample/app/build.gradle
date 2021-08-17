@@ -38,7 +38,9 @@ android {
             minifyEnabled false
             pseudoLocalesEnabled false
             zipAlignEnabled true
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            println("build.release")
+            println(getDefaultProguardFile('proguard-android-optimize.txt'))
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         debug {
             debuggable true
@@ -48,6 +50,9 @@ android {
             minifyEnabled false
             pseudoLocalesEnabled false
             zipAlignEnabled true
+            println("build.debug")
+            println(getDefaultProguardFile('proguard-android-optimize.txt'))
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
 
@@ -67,7 +72,7 @@ repositories {
 }
 
 dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation fileTree(include: ['*.jar', "*.aar"], dir: 'libs')
     implementation 'com.android.support.constraint:constraint-layout:2.0.4'
     testImplementation 'junit:junit:4.12'
     implementation 'com.android.support:appcompat-v7:28.0.0'
@@ -78,6 +83,8 @@ dependencies {
     implementation project(':http')
     implementation project(':download')
     implementation project(':common')
+//    compileOnly project(':common')
+
     implementation 'com.umeng.sdk:utdid:1.1.5.3'
     implementation 'com.alibaba:fastjson:1.2.72'
     implementation 'com.google.code.gson:gson:2.8.6'

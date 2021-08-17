@@ -19,3 +19,4 @@ build/
 #android studio configuration files
 *.iml
 .idea/
+sample/app/mapping.txt
