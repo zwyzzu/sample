@@ -3,7 +3,6 @@ package com.zhangwy.sample.entity;
 import android.net.Uri;
 
 import com.zhangwy.util.StringUtil;
-import com.zhangwy.util.Util;
 
 /**
  * CreateTime 2021/8/16 16:07

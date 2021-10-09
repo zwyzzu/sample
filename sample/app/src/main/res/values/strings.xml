@@ -35,6 +35,7 @@
     <string name="desc_permission_list">Permission</string>
     <string name="desc_short_cut_badger">图表红点</string>
     <string name="desc_read_contact">联系人权限</string>
+    <string name="desc_permission_api">权限API访问实例</string>
     <string name="full_window_button_dialog">Dialog</string>
     <string name="full_window_button_popup">PopupWindow</string>
     <string name="desc_download">Android下载器</string>
@@ -78,4 +79,5 @@
     <string name="request">请求</string>
     <string name="request_all">请求所有</string>
     <string name="request_all_num">请求所有(%d)</string>
+    <string name="request_all_permission">请求所有权限</string>
 </resources>
