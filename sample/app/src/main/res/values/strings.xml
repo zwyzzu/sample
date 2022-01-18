@@ -36,6 +36,9 @@
     <string name="desc_short_cut_badger">图表红点</string>
     <string name="desc_read_contact">联系人权限</string>
     <string name="desc_permission_api">权限API访问实例</string>
+    <string name="desc_text">Text测试</string>
+    <string name="desc_call_log">通话记录</string>
+    <string name="desc_fragment_cycle">Fragment生命周期</string>
     <string name="full_window_button_dialog">Dialog</string>
     <string name="full_window_button_popup">PopupWindow</string>
     <string name="desc_download">Android下载器</string>
@@ -80,4 +83,6 @@
     <string name="request_all">请求所有</string>
     <string name="request_all_num">请求所有(%d)</string>
     <string name="request_all_permission">请求所有权限</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

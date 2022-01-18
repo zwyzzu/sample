@@ -77,6 +77,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup">
+        <activity
+            android:name=".ui.FragmentCycleActivity"
+            android:exported="false" />
+        <activity android:name=".ui.CallLogActivity" />
 
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
@@ -136,6 +140,7 @@
         <activity android:name=".ui.ReadContactActivity" />
         <activity android:name=".ui.NetworkAccessActivity" />
         <activity android:name=".ui.ShortCutBadgerActivity" />
+        <activity android:name=".ui.TextActivity" />
 
         <service
             android:name="com.baidu.location.f"

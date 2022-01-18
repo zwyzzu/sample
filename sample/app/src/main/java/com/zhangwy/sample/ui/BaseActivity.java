@@ -1,7 +1,7 @@
 package com.zhangwy.sample.ui;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
 import com.zhangwy.util.Logger;
@@ -10,7 +10,7 @@ import com.zhangwy.util.Logger;
  * Updated by zhangwy on 2016/12/20 下午4:46.
  * Description
  */
-public class BaseActivity extends Activity{
+public class BaseActivity extends AppCompatActivity {
 
     protected String TAG = this.getClass().getSimpleName();
     private boolean destroyed = false;

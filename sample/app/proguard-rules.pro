@@ -43,3 +43,7 @@
 -keep class android.** { *; }
 -keep public class * extends android.support.v4.**
 -keep public class * extends android.app.Fragment
+
+-keep class com.zhangwy.alertWindow.MIUI {
+    *;
+}

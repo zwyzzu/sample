@@ -1,4 +1,4 @@
-include ':app', ':ahlint'
+include ':app'
 include ':widget'
 project(':widget').projectDir = new File(settingsDir, '../../library/widget')
 include ':http'
@@ -9,4 +9,5 @@ include ':common'
 project(':common').projectDir = new File(settingsDir, '../../library/common')
 include ':shortcutbadger'
 project(':shortcutbadger').projectDir = new File(settingsDir, '../../library/shortcutbadger')
+include ':ahlint'
 project(':ahlint').projectDir = new File(settingsDir, '../../ahlint')

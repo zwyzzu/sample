@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.CallLogActivity">
+
+    <EditText
+        android:id="@+id/callLogName"
+        android:layout_width="wrap_content"
+        android:layout_height="26dp"
+        android:hint="请输入名称"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:lines="1"
+        android:singleLine="true"
+        app:layout_constraintEnd_toStartOf="@+id/callLogNumber"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/callLogNumber"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/callLogNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="26dp"
+        android:hint="请输入号码"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:lines="1"
+        android:singleLine="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/callLogName"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toEndOf="@id/callLogName"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/callLogType"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/callLogName">
+
+        <RadioButton
+            android:id="@+id/callLogTypeInComing"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="拨入" />
+
+        <RadioButton
+            android:id="@+id/callLogTypeOutGoing"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="拨出" />
+
+        <RadioButton
+            android:id="@+id/callLogTypeMissed"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="未接" />
+
+        <RadioButton
+            android:id="@+id/callLogTypeRejected"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="拒接" />
+
+        <RadioButton
+            android:id="@+id/callLogTypeVoiceMails"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="邮箱"
+            android:visibility="gone" />
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/callLogTime"
+        android:layout_width="0dp"
+        android:layout_height="26dp"
+        android:hint="时长"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:lines="1"
+        android:singleLine="true"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/callLogType" />
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="26dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/callLogTime"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toEndOf="@id/callLogTime"
+        app:layout_constraintTop_toTopOf="@id/callLogTime" />
+
+    <com.zhangwy.widget.recycler.WRecyclerView
+        android:id="@+id/callLogList"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

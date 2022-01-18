@@ -155,6 +155,9 @@ public class MainActivity extends BaseActivity implements RecyclerAdapter.OnItem
         samples.add(new HomeSampleItem(samples.size() + 1, "Sample Item" + samples.size() + 1, "Short Cut Badger", getString(R.string.desc_short_cut_badger), ShortCutBadgerActivity.class));
         samples.add(new HomeSampleItem(samples.size() + 1, "Sample Item" + samples.size() + 1, "Read Contact", getString(R.string.desc_read_contact), ReadContactActivity.class));
         samples.add(new HomeSampleItem(samples.size() + 1, "Sample Item" + samples.size() + 1, "Permission API", getString(R.string.desc_permission_api), PermissionApiActivity.class));
+        samples.add(new HomeSampleItem(samples.size() + 1, "Sample Item" + samples.size() + 1, "Call Log", getString(R.string.desc_permission_api), CallLogActivity.class));
+        samples.add(new HomeSampleItem(samples.size() + 1, "Sample Item" + samples.size() + 1, "Text", getString(R.string.desc_text), TextActivity.class));
+        samples.add(new HomeSampleItem(samples.size() + 1, "Sample Item" + samples.size() + 1, "Fragment·Cycle", getString(R.string.desc_fragment_cycle), FragmentCycleActivity.class));
         return samples;
     }
 }
