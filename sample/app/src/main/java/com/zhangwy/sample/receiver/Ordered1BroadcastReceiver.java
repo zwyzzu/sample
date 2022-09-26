@@ -1,24 +1,27 @@
 package com.zhangwy.sample.receiver;
 
-import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 
 import com.zhangwy.util.Logger;
 
+import java.util.Objects;
+
 /**
- * CreateTime 2021/6/1 14:56
+ * CreateTime 2022/9/24 14:38
  * Author zhangwy
  * desc:
- *
+ * 有序广播
  * -------------------------------------------------------------------------------------------------
  * use:
- *
+ * 接受权限1
  **/
-public class BaseReceiver extends BroadcastReceiver {
-    public static final String COMMON_RECEIVER = "com.zhangwy.common.receiver";
+public class Ordered1BroadcastReceiver extends BaseReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
-        Logger.d("BaseReceiver.action:" + intent.getAction());
+        super.onReceive(context, intent);
+        if (Objects.equals(intent.getAction(), COMMON_RECEIVER)) {
+            Logger.d(String.format("广播类%s", this.getClass().getSimpleName()));
+        }
     }
 }

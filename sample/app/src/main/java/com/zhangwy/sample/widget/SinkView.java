@@ -9,6 +9,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Region;
+import android.os.Build;
 import android.util.AttributeSet;
 import android.widget.FrameLayout;
 
@@ -22,6 +23,7 @@ import com.zhangwy.sample.R;
  * Description:TODO
  */
 
+@SuppressWarnings("IntegerDivisionInFloatingPointContext")
 public class SinkView extends FrameLayout {
     private Bitmap mBitmap, mScaleBitmap;
     private Paint mPaint = new Paint();
@@ -53,7 +55,19 @@ public class SinkView extends FrameLayout {
         path.reset();
         canvas.clipPath(path);
         path.addCircle(width / 2, height / 2, width / 2, Path.Direction.CCW);
-        canvas.clipPath(path, Region.Op.REPLACE);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+            Path newPath = new Path();
+            newPath.moveTo(0, 0);
+            newPath.lineTo(getWidth(), 0);
+            newPath.lineTo(getWidth(), getHeight());
+            newPath.lineTo(0, getHeight());
+            newPath.close();
+            //以上根据实际的Canvas或View的大小，画出相同大小的Path即可
+            newPath.op(path, Path.Op.XOR);
+            canvas.clipPath(newPath);
+        } else {
+            canvas.clipPath(path, Region.Op.REPLACE);
+        }
 
         if (mScaleBitmap == null) {
             mBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.sink);

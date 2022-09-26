@@ -2,10 +2,15 @@ package com.zhangwy.sample.ui;
 
 import android.content.Intent;
 import android.content.res.Resources;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Process;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
+import android.system.ErrnoException;
+import android.system.Os;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,12 +18,15 @@ import android.widget.TextView;
 
 import com.zhangwy.sample.R;
 import com.zhangwy.sample.entity.HomeSampleItem;
+import com.zhangwy.util.Logger;
+import com.zhangwy.util.Util;
 import com.zhangwy.widget.recycler.RecyclerAdapter;
 import com.zhangwy.widget.recycler.RecyclerDivider;
 import com.zhangwy.widget.recycler.WRecyclerView;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Locale;
 
 @SuppressWarnings({"FieldCanBeLocal", "NullableProblems"})
 public class MainActivity extends BaseActivity implements RecyclerAdapter.OnItemClickListener<HomeSampleItem> {
@@ -30,6 +38,22 @@ public class MainActivity extends BaseActivity implements RecyclerAdapter.OnItem
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initSampleItems();
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    try {
+                        int pid = Process.myPid();
+                        Logger.d(String.format(Locale.getDefault(), "pid:%d", pid));
+                        Os.kill(pid, Process.SIGNAL_QUIT);
+                        Logger.d(String.format(Locale.getDefault(), "kill.signal:%d, pid:%d", Process.SIGNAL_QUIT, pid));
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }, 10000);
+
     }
 
     private void initSampleItems() {
@@ -158,6 +182,9 @@ public class MainActivity extends BaseActivity implements RecyclerAdapter.OnItem
         samples.add(new HomeSampleItem(samples.size() + 1, "Sample Item" + samples.size() + 1, "Call Log", getString(R.string.desc_permission_api), CallLogActivity.class));
         samples.add(new HomeSampleItem(samples.size() + 1, "Sample Item" + samples.size() + 1, "Text", getString(R.string.desc_text), TextActivity.class));
         samples.add(new HomeSampleItem(samples.size() + 1, "Sample Item" + samples.size() + 1, "Fragment·Cycle", getString(R.string.desc_fragment_cycle), FragmentCycleActivity.class));
+        samples.add(new HomeSampleItem(samples.size() + 1, "Sample Item" + samples.size() + 1, "UMSAgent", getString(R.string.desc_ums_status), UmsActivity.class));
+        samples.add(new HomeSampleItem(samples.size() + 1, "Sample Item" + samples.size() + 1, "Read Phone State", getString(R.string.desc_read_phone_state), ReadPhoneStateActivity.class));
+        samples.add(new HomeSampleItem(samples.size() + 1, "Sample Item" + samples.size() + 1, "发送广播", getString(R.string.desc_broadcast_receiver), BroadcastReceiverActivity.class));
         return samples;
     }
 }

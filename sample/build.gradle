@@ -18,6 +18,9 @@ buildscript {
         maven {
             url 'https://maven.aliyun.com/repository/google'
         }
+        maven {
+            url "http://repo.corpautohome.com/nexus/content/groups/public/"
+        }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.6.0'
@@ -41,6 +44,9 @@ allprojects {
         }
         maven {
             url 'https://maven.aliyun.com/repository/google'
+        }
+        maven {
+            url "http://repo.corpautohome.com/nexus/content/groups/public/"
         }
     }
 }

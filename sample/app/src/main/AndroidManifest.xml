@@ -78,6 +78,19 @@
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup">
         <activity
+            android:name=".ui.BroadcastReceiverActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ui.ReadPhoneStateActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.UmsActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.FragmentCycleActivity"
             android:exported="false" />
         <activity android:name=".ui.CallLogActivity" />
@@ -157,8 +170,35 @@
                 <action android:name="android.intent.action.PACKAGE_INSTALL" />
                 <action android:name="android.intent.action.PACKAGE_CHANGED" />
                 <action android:name="android.intent.action.PACKAGE_REMOVED" />
+                <action android:name="android.intent.action.PHONE_STATE" />
+                <action android:name="android.intent.action.NEW_OUTGOING_CALL" />
             </intent-filter>
         </receiver>
+        <!--        <receiver android:name=".receiver.Ordered1BroadcastReceiver">-->
+        <!--            <intent-filter android:priority="1">-->
+        <!--                <action android:name="android.intent.action.BOOT_COMPLETED" />-->
+        <!--            </intent-filter>-->
+        <!--        </receiver>-->
+        <!--        <receiver android:name=".receiver.Ordered2BroadcastReceiver">-->
+        <!--            <intent-filter android:priority="100">-->
+        <!--                <action android:name="android.intent.action.BOOT_COMPLETED" />-->
+        <!--            </intent-filter>-->
+        <!--        </receiver>-->
+        <!--        <receiver android:name=".receiver.Ordered3BroadcastReceiver">-->
+        <!--            <intent-filter android:priority="1000">-->
+        <!--                <action android:name="android.intent.action.BOOT_COMPLETED" />-->
+        <!--            </intent-filter>-->
+        <!--        </receiver>-->
+        <!--        <receiver android:name=".receiver.Ordered4BroadcastReceiver">-->
+        <!--            <intent-filter android:priority="32768">-->
+        <!--                <action android:name="android.intent.action.BOOT_COMPLETED" />-->
+        <!--            </intent-filter>-->
+        <!--        </receiver>-->
+        <!--        <receiver android:name=".receiver.Ordered5BroadcastReceiver">-->
+        <!--            <intent-filter android:priority="2147483647">-->
+        <!--                <action android:name="android.intent.action.BOOT_COMPLETED" />-->
+        <!--            </intent-filter>-->
+        <!--        </receiver>-->
     </application>
 
 </manifest>
